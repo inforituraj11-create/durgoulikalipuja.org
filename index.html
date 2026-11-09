@@ -68,4 +68,444 @@
 
     <!-- Top Announcement Bar -->
     <aside class="bg-amber-500 text-stone-950 text-xs sm:text-sm font-semibold py-1.5 px-4 text-center tracking-wide shadow-sm flex items-center justify-center gap-2">
-        <i class="fa-solid fa-om text-stone-900
+        <i class="fa-solid fa-om text-stone-900"></i>
+        <span>।। जय माँ काली ।। खौआरे परिवार दुर्गौली – वार्षिक काली पूजा २०२६ सहयोग राशि सूची</span>
+        <i class="fa-solid fa-om text-stone-900"></i>
+    </aside>
+
+    <!-- Main Header -->
+    <header class="gradient-maroon text-white sticky top-0 z-40 shadow-md border-b-2 border-gold-500/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-full bg-amber-500/20 border-2 border-gold-400 flex items-center justify-center text-amber-300 text-xl shadow-inner group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-hands-praying"></i>
+                </div>
+                <div>
+                    <h1 class="text-base sm:text-lg md:text-xl font-bold tracking-tight text-amber-200 devanagari-title">
+                        काली पूजा खौआरे परिवार
+                    </h1>
+                    <p class="text-xs text-rose-200/90 font-medium">
+                        दुर्गौली • वर्ष २०२६ (७९ सदस्यक सूची)
+                    </p>
+                </div>
+            </a>
+
+            <div class="flex items-center gap-2">
+                <button onclick="shareOnWhatsApp()" class="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-medium px-3.5 py-2 rounded-lg shadow transition">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span class="hidden sm:inline">व्हाट्सएप पर शेयर</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-maroon text-white pt-8 pb-12 px-4 border-b border-rose-900 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-amber-400/40 text-amber-300 text-xs sm:text-sm mb-4">
+                <i class="fa-solid fa-fire-flame-curved"></i>
+                <span class="font-semibold tracking-wider">।। ॐ क्रीं कालिकायै नमः ।।</span>
+            </div>
+
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-amber-100 devanagari-title mb-3 tracking-tight">
+                काली पूजा खौआरे परिवार, दुर्गौली
+            </h2>
+            <p class="text-sm sm:text-base text-rose-100/90 max-w-2xl mx-auto mb-8 font-light leading-relaxed">
+                खौआरे परिवारक समस्त सदस्यक पावन सहयोग सं कुलदेवी माँ श्यामा कालीक पूजनोत्सव भव्य रूपेण संपन्न होयत। पारदर्शिता एवं पारिवारिक सौहार्द लेल सभ सहयोगकर्ताक अधिकृत सूची नीचाँ प्रस्तुत अछि।
+            </p>
+
+            <!-- Stat Cards -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto">
+                <div class="bg-black/30 backdrop-blur-md rounded-xl p-3.5 sm:p-4 border border-amber-400/30 text-center">
+                    <span class="text-xs text-rose-200 block mb-1">कुल संकलित राशि</span>
+                    <span class="text-lg sm:text-2xl font-bold text-amber-300 block font-mono" id="stat-total-amount">₹ ३,०२,९७५</span>
+                    <span class="text-[11px] text-emerald-400 font-medium">✓ सत्यापित सहयोग</span>
+                </div>
+
+                <div class="bg-black/30 backdrop-blur-md rounded-xl p-3.5 sm:p-4 border border-amber-400/30 text-center">
+                    <span class="text-xs text-rose-200 block mb-1">कुल सहयोगकर्ता</span>
+                    <span class="text-lg sm:text-2xl font-bold text-amber-300 block font-mono" id="stat-total-members">७९</span>
+                    <span class="text-[11px] text-rose-200 font-medium">परिवारजन एवं शाखा</span>
+                </div>
+
+                <div class="bg-black/30 backdrop-blur-md rounded-xl p-3.5 sm:p-4 border border-amber-400/30 text-center">
+                    <span class="text-xs text-rose-200 block mb-1">प्रतिमा वास्ते</span>
+                    <span class="text-base sm:text-xl font-bold text-amber-300 block font-mono">₹ २१,००१</span>
+                    <span class="text-[11px] text-amber-200/80 truncate block">श्री प्रभु कांत झा</span>
+                </div>
+
+                <div class="bg-black/30 backdrop-blur-md rounded-xl p-3.5 sm:p-4 border border-amber-400/30 text-center">
+                    <span class="text-xs text-rose-200 block mb-1">हवन वास्ते</span>
+                    <span class="text-base sm:text-xl font-bold text-amber-300 block font-mono">₹ १५,५५५</span>
+                    <span class="text-[11px] text-amber-200/80 truncate block">श्रीमती स्वाति झा</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full">
+
+        <!-- Controls: Search, Sort, Filters -->
+        <div class="bg-white rounded-2xl shadow-sm border border-stone-200 p-4 sm:p-5 mb-6">
+            <div class="flex flex-col md:flex-row gap-3 sm:gap-4 items-stretch md:items-center justify-between">
+                
+                <!-- Search Input -->
+                <div class="relative flex-1">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 text-sm"></i>
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        oninput="filterAndRender()" 
+                        placeholder="नाम अथवा राशि सं खोजू (उदा. वीरेन्द्र, वकील, 5101)..." 
+                        class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-rose-800 text-sm bg-stone-50/50"
+                    >
+                </div>
+
+                <!-- Sort Dropdown -->
+                <div class="w-full md:w-64">
+                    <select 
+                        id="sortSelect" 
+                        onchange="filterAndRender()" 
+                        class="w-full py-2.5 px-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-rose-800 text-sm bg-stone-50/50 font-medium text-stone-700"
+                    >
+                        <option value="serial">क्रम संख्या (१ सं ७९)</option>
+                        <option value="high">राशि: अधिकतम सं न्यूनतम (High to Low)</option>
+                        <option value="low">राशि: न्यूनतम सं अधिकतम (Low to High)</option>
+                        <option value="name">नाम वर्णमाला अनुसार (A-Z / अ-ज्ञ)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Category / Tier Filter Pills -->
+            <div class="mt-4 pt-3 border-t border-stone-100 flex flex-wrap gap-2 items-center text-xs">
+                <span class="text-stone-500 font-semibold mr-1">श्रेणी फ़िल्टर:</span>
+                <button onclick="setTierFilter('all')" id="btn-tier-all" class="tier-pill px-3 py-1 rounded-full border bg-rose-900 text-white border-rose-900 font-medium">सभ (७९)</button>
+                <button onclick="setTierFilter('10k')" id="btn-tier-10k" class="tier-pill px-3 py-1 rounded-full border bg-stone-100 hover:bg-stone-200 text-stone-700 border-stone-200 font-medium">₹१०,०००+</button>
+                <button onclick="setTierFilter('5k')" id="btn-tier-5k" class="tier-pill px-3 py-1 rounded-full border bg-stone-100 hover:bg-stone-200 text-stone-700 border-stone-200 font-medium">₹५,००० - ₹९,९९९</button>
+                <button onclick="setTierFilter('2k')" id="btn-tier-2k" class="tier-pill px-3 py-1 rounded-full border bg-stone-100 hover:bg-stone-200 text-stone-700 border-stone-200 font-medium">₹२,००० - ₹४,९९९</button>
+                <button onclick="setTierFilter('sub2k')" id="btn-tier-sub2k" class="tier-pill px-3 py-1 rounded-full border bg-stone-100 hover:bg-stone-200 text-stone-700 border-stone-200 font-medium">₹२,००० सं कम</button>
+            </div>
+        </div>
+
+        <!-- Table View -->
+        <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden">
+            <div class="px-4 py-3 bg-stone-50 border-b border-stone-200 flex items-center justify-between text-xs text-stone-600 font-medium">
+                <div>
+                    प्रदर्शित सदस्य: <span id="displayCount" class="font-bold text-stone-900">79</span> / 79
+                </div>
+                <div class="text-amber-800 font-semibold">
+                    ।। माँ काली सर्वमंगल करू ।।
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm border-collapse">
+                    <thead>
+                        <tr class="bg-stone-100/80 text-stone-700 text-xs uppercase tracking-wider border-b border-stone-200">
+                            <th class="py-3 px-4 font-semibold text-center w-16">क्र.</th>
+                            <th class="py-3 px-4 font-semibold">सहयोगकर्ताक नाम एवं विवरण</th>
+                            <th class="py-3 px-4 font-semibold text-center hidden sm:table-cell">उद्देश्य / शाखा</th>
+                            <th class="py-3 px-4 font-semibold text-right">सहयोग राशि</th>
+                            <th class="py-3 px-4 font-semibold text-center w-24">स्थिति</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contributorTableBody" class="divide-y divide-stone-100">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Empty Search State -->
+            <div id="noResults" class="hidden py-12 text-center text-stone-500">
+                <i class="fa-solid fa-magnifying-glass text-3xl mb-3 text-stone-300"></i>
+                <p class="font-medium">कोनो सदस्य नहि भेटल।</p>
+                <p class="text-xs text-stone-400 mt-1">कृपया दोसर नाम अथवा वर्तनी (Spelling) लिख क' खोजू।</p>
+            </div>
+
+            <!-- Bottom Table Total -->
+            <div class="bg-rose-50/70 p-4 border-t border-rose-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+                    <span class="font-semibold text-stone-700">काली पूजा २०२६ – संकलित कुल योग:</span>
+                </div>
+                <div class="text-lg font-bold text-brand-900 font-mono">
+                    ₹ ३,०२,९७५/-
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Details Section -->
+        <section class="mt-10 bg-white rounded-2xl shadow-sm border border-stone-200 p-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <span class="text-xs font-bold text-brand-900 uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-100">सहयोग प्रेषण विवरणी</span>
+                <h3 class="text-xl font-bold text-stone-800 mt-2 mb-1">सहयोग राशि पठेबाक अधिकृत माध्यम</h3>
+                <p class="text-xs sm:text-sm text-stone-500 mb-6">जँ कोनो परिवारजन अपन सहयोग राशि अनलाइन पठेबाक चाहैत छथि, तँ नीचाँ देल खाता पर पठबि सकैत छथि:</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+                    <!-- UPI Details -->
+                    <div class="p-4 rounded-xl border border-stone-200 bg-stone-50/60 relative">
+                        <div class="flex items-center gap-2 text-brand-900 font-bold mb-2 text-sm">
+                            <i class="fa-solid fa-qrcode text-base"></i>
+                            <span>UPI विवरणी</span>
+                        </div>
+                        <p class="text-xs text-stone-600 mb-1">समितिक UPI ID:</p>
+                        <div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-stone-200 text-xs font-mono font-bold text-stone-800">
+                            <span id="upiText">khaware.puja@upi</span>
+                            <button onclick="copyToClipboard('upiText')" class="text-brand-800 hover:text-brand-900 ml-2" title="कॉपी करू">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Bank Details -->
+                    <div class="p-4 rounded-xl border border-stone-200 bg-stone-50/60">
+                        <div class="flex items-center gap-2 text-brand-900 font-bold mb-2 text-sm">
+                            <i class="fa-solid fa-building-columns text-base"></i>
+                            <span>बैंक खाता विवरणी</span>
+                        </div>
+                        <div class="text-xs text-stone-600 space-y-1">
+                            <p><span class="font-semibold text-stone-700">खाता नाम:</span> काली पूजा समिति दुर्गौली</p>
+                            <p><span class="font-semibold text-stone-700">बैंक:</span> भारतीय स्टेट बैंक (SBI)</p>
+                            <p><span class="font-semibold text-stone-700">खाता सं.:</span> अधिकृत नंबर WhatsApp ग्रुप मे उपलब्ध</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-[11px] text-stone-400 mt-4">
+                    * सहयोग राशि पठेलाक उपरांत स्क्रीनशॉट अथवा सूचना पारिवारिक व्हाट्सएप ग्रुप मे अवश्य साझा करू जाहि सं सूची अद्यतन भ' सकय।
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-8 px-4 text-center text-xs mt-12 border-t border-stone-800">
+        <div class="max-w-4xl mx-auto space-y-3">
+            <div class="text-amber-400 text-base font-bold devanagari-title">
+                काली पूजा खौआरे परिवार, दुर्गौली
+            </div>
+            <p class="text-stone-400 max-w-xl mx-auto leading-relaxed">
+                सभ सहयोगकर्ताक प्रति हार्दिक आभार एवं कृतज्ञता। माँ कालीक कृपा सं खौआरे परिवार मे सर्वदा सुख, शांति, समृद्धि एवं परस्पर भ्रातृभाव बनल रहय।
+            </p>
+            <div class="pt-2 text-stone-400 text-[11px]">
+                ।। जय माँ काली ।। सर्वाधिकार सुरक्षित २०२६ ।।
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-stone-900 text-white text-xs px-4 py-2.5 rounded-xl shadow-lg border border-stone-700 transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+        <span id="toastMsg">कॉपी भ' गेल!</span>
+    </div>
+
+    <!-- JavaScript Data and Interactive Logic -->
+    <script>
+        // All 79 Contributors Data
+        const contributors = [
+            { id: 1, name: "श्री प्रभु कांत झा", amount: 21001, purpose: "प्रतिमा वास्ते" },
+            { id: 2, name: "श्रीमती स्वाति झा", amount: 15555, purpose: "हवन वास्ते" },
+            { id: 3, name: "थ्री डॉट्स लाइफ साइंस प्रा. लि.", amount: 12501, purpose: "" },
+            { id: 4, name: "श्री वीरेन्द्र झा", amount: 12345, purpose: "" },
+            { id: 5, name: "श्री अरविंद कुमार झा", amount: 11001, purpose: "" },
+            { id: 6, name: "श्री अश्वनी कुमार झा", amount: 11000, purpose: "" },
+            { id: 7, name: "प्रो. अजय कुमार झा", amount: 10001, purpose: "" },
+            { id: 8, name: "श्री संजय कुमार झा (हरेराम काका)", amount: 10001, purpose: "" },
+            { id: 9, name: "श्रीमती ऋचा मिश्रा (झुना)", amount: 9500, purpose: "" },
+            { id: 10, name: "श्री कमलेश कुमार झा", amount: 6101, purpose: "" },
+            { id: 11, name: "श्री कुणाल कश्यप", amount: 5501, purpose: "" },
+            { id: 12, name: "श्रीमती रीता झा (सीतामढ़ी)", amount: 5501, purpose: "" },
+            { id: 13, name: "श्री दुश्यंत कश्यप (मोंटी)", amount: 5501, purpose: "" },
+            { id: 14, name: "श्री मनोज कुमार झा", amount: 5101, purpose: "" },
+            { id: 15, name: "श्री अमर कुमार झा (शम्भू काका)", amount: 5101, purpose: "" },
+            { id: 16, name: "श्री अजीत कुमार झा (छोटू काका)", amount: 5101, purpose: "" },
+            { id: 17, name: "श्री द्रवेश कुमार झा", amount: 5101, purpose: "" },
+            { id: 18, name: "श्री अशोक कुमार झा", amount: 5001, purpose: "" },
+            { id: 19, name: "श्रीमती टीना", amount: 5001, purpose: "" },
+            { id: 20, name: "श्रीमती शिप्रा झा", amount: 5001, purpose: "" },
+            { id: 21, name: "श्रीमती शाखा झा", amount: 5001, purpose: "" },
+            { id: 22, name: "श्री अखिलेश कुमार झा", amount: 5001, purpose: "" },
+            { id: 23, name: "श्री अतुल कश्यप", amount: 5001, purpose: "" },
+            { id: 24, name: "श्री अंकित झा", amount: 5001, purpose: "" },
+            { id: 25, name: "श्री अंकुर झा", amount: 5001, purpose: "" },
+            { id: 26, name: "श्री बिनम्र कश्यप", amount: 5001, purpose: "" },
+            { id: 27, name: "श्रीमती पुष्पा चौधरी", amount: 5000, purpose: "" },
+            { id: 28, name: "श्री अवनीश कुमार झा", amount: 3501, purpose: "" },
+            { id: 29, name: "श्रीमती बबीता झा", amount: 3101, purpose: "" },
+            { id: 30, name: "श्री संजीव कुमार झा (टिंकू काका)", amount: 3001, purpose: "" },
+            { id: 31, name: "डॉ. रजनीश कश्यप", amount: 2751, purpose: "" },
+            { id: 32, name: "श्री आशीष कश्यप", amount: 2751, purpose: "" },
+            { id: 33, name: "प्रो. बिनय कुमार झा", amount: 2501, purpose: "" },
+            { id: 34, name: "प्रो. ज्योति झा", amount: 2501, purpose: "" },
+            { id: 35, name: "श्रीमती चित्रा", amount: 2501, purpose: "" },
+            { id: 36, name: "श्री आदर्श विनय", amount: 2501, purpose: "" },
+            { id: 37, name: "श्रीमती कुंतल", amount: 2501, purpose: "" },
+            { id: 38, name: "श्रीमती मीरा झा", amount: 2501, purpose: "" },
+            { id: 39, name: "श्री आलोक कुमार", amount: 2501, purpose: "" },
+            { id: 40, name: "श्रीमती प्रियंका झा", amount: 2501, purpose: "" },
+            { id: 41, name: "श्री राजेश झा", amount: 2501, purpose: "" },
+            { id: 42, name: "श्रीमती निशा झा", amount: 2501, purpose: "" },
+            { id: 43, name: "श्रीमती अर्चना झा", amount: 2501, purpose: "" },
+            { id: 44, name: "गौरव ठाकुर", amount: 2501, purpose: "" },
+            { id: 45, name: "श्री बसंत कुमार झा", amount: 2105, purpose: "" },
+            { id: 46, name: "सुश्री श्वेतलाना झा", amount: 2101, purpose: "" },
+            { id: 47, name: "श्री मुकेश कुमार झा (लड्डू)", amount: 2101, purpose: "" },
+            { id: 48, name: "सुश्री अपूर्वा झा", amount: 2100, purpose: "" },
+            { id: 49, name: "श्रीमती कल्याणी झा", amount: 2100, purpose: "" },
+            { id: 50, name: "श्री सत्यम झा", amount: 2001, purpose: "" },
+            { id: 51, name: "श्रीमती श्रेयता झा पूजा", amount: 1501, purpose: "" },
+            { id: 52, name: "श्री नितीश कुमार कश्यप", amount: 1501, purpose: "" },
+            { id: 53, name: "श्रीमती सुजाता झा", amount: 1101, purpose: "" },
+            { id: 54, name: "श्री प्रत्यूष कुमार झा", amount: 1101, purpose: "" },
+            { id: 55, name: "श्री कौशल किशोर झा", amount: 1101, purpose: "" },
+            { id: 56, name: "श्री संतोष कुमार झा", amount: 1101, purpose: "" },
+            { id: 57, name: "श्री दिलीप कुमार झा", amount: 1101, purpose: "" },
+            { id: 58, name: "श्रीमती मीनू झा", amount: 1101, purpose: "" },
+            { id: 59, name: "सुश्री ललिता झा", amount: 1100, purpose: "" },
+            { id: 60, name: "सुश्री विशाखा झा", amount: 1100, purpose: "" },
+            { id: 61, name: "श्री विश्वजीत झा", amount: 1100, purpose: "" },
+            { id: 62, name: "श्री प्रियराज झा (बमबम)", amount: 1100, purpose: "" },
+            { id: 63, name: "सुश्री शुभी (शिवांगी झा)", amount: 1001, purpose: "" },
+            { id: 64, name: "श्री विशाल कुमार", amount: 505, purpose: "" },
+            { id: 65, name: "श्री शिवम झा", amount: 501, purpose: "" },
+            { id: 66, name: "सुश्री अनुराधा झा", amount: 501, purpose: "" },
+            { id: 67, name: "श्रीमती रेणु झा (देपूरा)", amount: 501, purpose: "" },
+            { id: 68, name: "श्रीमती ऋतु झा", amount: 501, purpose: "" },
+            { id: 69, name: "श्रीमती नीलम झा", amount: 501, purpose: "" },
+            { id: 70, name: "श्री बच्चू नाथ झा", amount: 501, purpose: "" },
+            { id: 71, name: "श्री बैद्यनाथ झा", amount: 251, purpose: "" },
+            { id: 72, name: "श्री गोपाल कुमार झा", amount: 251, purpose: "" },
+            { id: 73, name: "श्री जटाशंकर झा", amount: 1101, purpose: "" },
+            { id: 74, name: "श्री पशुपति झा", amount: 5101, purpose: "" },
+            { id: 75, name: "श्री रमापति झा", amount: 5101, purpose: "" },
+            { id: 76, name: "श्री अभिषेक कुमार झा", amount: 1001, purpose: "" },
+            { id: 77, name: "श्री राजू झा", amount: 501, purpose: "" },
+            { id: 78, name: "श्री किशोर कुमार झा", amount: 2500, purpose: "" },
+            { id: 79, name: "श्री अरुण कुमार झा (वकील साहिब)", amount: 5101, purpose: "" }
+        ];
+
+        let currentTier = 'all';
+
+        function setTierFilter(tier) {
+            currentTier = tier;
+            document.querySelectorAll('.tier-pill').forEach(btn => {
+                btn.className = "tier-pill px-3 py-1 rounded-full border bg-stone-100 hover:bg-stone-200 text-stone-700 border-stone-200 font-medium";
+            });
+            const activeBtn = document.getElementById('btn-tier-' + tier);
+            if(activeBtn) {
+                activeBtn.className = "tier-pill px-3 py-1 rounded-full border bg-rose-900 text-white border-rose-900 font-medium";
+            }
+            filterAndRender();
+        }
+
+        function filterAndRender() {
+            const query = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+            const sortVal = document.getElementById('sortSelect').value;
+
+            let filtered = contributors.filter(item => {
+                const matchQuery = item.name.toLowerCase().includes(query) || 
+                                   item.amount.toString().includes(query) ||
+                                   (item.purpose && item.purpose.toLowerCase().includes(query));
+
+                let matchTier = true;
+                if(currentTier === '10k') matchTier = (item.amount >= 10000);
+                else if(currentTier === '5k') matchTier = (item.amount >= 5000 && item.amount < 10000);
+                else if(currentTier === '2k') matchTier = (item.amount >= 2000 && item.amount < 5000);
+                else if(currentTier === 'sub2k') matchTier = (item.amount < 2000);
+
+                return matchQuery && matchTier;
+            });
+
+            // Sorting logic
+            if(sortVal === 'high') {
+                filtered.sort((a, b) => b.amount - a.amount);
+            } else if(sortVal === 'low') {
+                filtered.sort((a, b) => a.amount - b.amount);
+            } else if(sortVal === 'name') {
+                filtered.sort((a, b) => a.name.localeCompare(b.name, 'hi'));
+            } else {
+                filtered.sort((a, b) => a.id - b.id);
+            }
+
+            renderTable(filtered);
+        }
+
+        function renderTable(list) {
+            const tbody = document.getElementById('contributorTableBody');
+            const noResults = document.getElementById('noResults');
+            const displayCount = document.getElementById('displayCount');
+
+            displayCount.textContent = list.length;
+            tbody.innerHTML = '';
+
+            if (list.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            }
+            noResults.classList.add('hidden');
+
+            list.forEach((item, index) => {
+                const tr = document.createElement('tr');
+                tr.className = (index % 2 === 0 ? 'bg-white' : 'bg-stone-50/50') + ' hover:bg-amber-50/60 transition-colors';
+
+                const formattedAmt = '₹ ' + item.amount.toLocaleString('en-IN');
+                const purposeBadge = item.purpose ? `<span class="inline-block bg-amber-100 text-amber-900 border border-amber-300 text-[11px] font-semibold px-2 py-0.5 rounded-md ml-2">${item.purpose}</span>` : '';
+
+                tr.innerHTML = `
+                    <td class="py-3 px-4 text-center font-mono text-xs text-stone-500 font-semibold">${item.id}</td>
+                    <td class="py-3 px-4 font-medium text-stone-800">
+                        ${item.name}
+                        ${purposeBadge}
+                    </td>
+                    <td class="py-3 px-4 text-center text-xs text-stone-500 hidden sm:table-cell">
+                        ${item.purpose ? item.purpose : 'सामान्य सहयोग'}
+                    </td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-stone-900">${formattedAmt}</td>
+                    <td class="py-3 px-4 text-center">
+                        <span class="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                            <i class="fa-solid fa-check text-[9px]"></i> प्राप्त
+                        </span>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function copyToClipboard(elementId) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                showToast("UPI ID कॉपी भ' गेल!");
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
+        }
+
+        function shareOnWhatsApp() {
+            const text = encodeURIComponent(
+                "🙏 *जय माँ काली* 🙏\n\n" +
+                "*काली पूजा खौआरे परिवार (दुर्गौली) – २०२६*\n" +
+                "अधिकृत सहयोग राशि विवरणी:\n\n" +
+                "• कुल सहयोगकर्ता: ७९ परिवारजन\n" +
+                "• कुल संकलित राशि: ₹ ३,०२,९७५/-\n\n" +
+                "सभ ७९ सदस्यक सूची आ विवरण देखबाक लेल वेबसाइट लिंक पर क्लिक करू:\n" +
+                window.location.href
+            );
+            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+        }
+
+        // Initial Render on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            filterAndRender();
+        });
+    </script>
+</body>
+</html>

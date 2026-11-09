@@ -267,13 +267,33 @@
 
             <div class="bg-black/70 p-3.5 border-t border-amber-500/30 flex items-center justify-between text-xs sm:text-sm">
                 <span class="font-bold text-amber-200">काली पूजा २०२६ – संकलित कुल योग:</span>
-                <span class="font-extrabold text-amber-400 font-mono text-base">₹ ३,०२,९७५/-</span>
+                <span class="font-extrabold text-amber-400 font-mono text-base" id="stat-footer-total">₹ ३,०२,९७५/-</span>
             </div>
         </div>
 
         <!-- Cards View Container -->
         <div id="cardsViewContainer" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             <!-- Rendered by JS -->
+        </div>
+
+        <!-- Public Contribution Self-Submission Form -->
+        <div class="mt-6 card-dark rounded-xl p-4 sm:p-5 border border-amber-500/30">
+            <div class="flex items-center justify-between border-b border-stone-800 pb-2 mb-3">
+                <div class="flex items-center gap-2 text-amber-300">
+                    <i class="fa-solid fa-user-plus text-sm"></i>
+                    <h4 class="font-bold text-xs sm:text-sm font-devanagari">अपन सहयोग राशि प्रविष्टि जोड़ू (Self-Add Entry)</h4>
+                </div>
+                <span class="text-[10px] text-stone-400">* सहयोग पठेलाक उपरांत एतय भरू</span>
+            </div>
+            <form onsubmit="handlePublicContribution(event)" class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs">
+                <input type="text" id="pubName" required placeholder="सहयोगकर्ताक नाम (उदा. श्री..." class="p-2.5 rounded-lg bg-black/60 border border-stone-700 text-amber-100 placeholder-stone-500 focus:outline-none focus:border-amber-400">
+                <input type="number" id="pubAmount" required min="1" placeholder="राशि (₹)" class="p-2.5 rounded-lg bg-black/60 border border-stone-700 text-amber-100 placeholder-stone-500 focus:outline-none focus:border-amber-400 font-mono">
+                <input type="text" id="pubPurpose" placeholder="उद्देश्य / शाखा (ऐच्छिक)" class="p-2.5 rounded-lg bg-black/60 border border-stone-700 text-amber-100 placeholder-stone-500 focus:outline-none focus:border-amber-400">
+                <button type="submit" class="p-2.5 bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold rounded-lg transition flex items-center justify-center gap-1.5 shadow">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>सूची मे जोड़ू</span>
+                </button>
+            </form>
         </div>
 
         <!-- 2. वंशावली सेक्शन (Exact UI from Screenshot 1 & 2) -->
@@ -730,7 +750,15 @@
                     <button onclick="logoutAdmin()" class="text-stone-400 hover:text-stone-200">लॉगआउट</button>
                 </div>
 
-                <div class="space-y-4">
+                <!-- Admin Tabs: Photo Upload / Photo Manager / PIN Change -->
+                <div class="flex items-center gap-1.5 bg-black/50 p-1 rounded-lg border border-stone-800 mb-4">
+                    <button onclick="switchAdminTab('upload')" id="atab-upload" class="flex-1 py-1 px-2 rounded bg-amber-500 text-stone-950 font-bold transition">फोटो जोड़ू</button>
+                    <button onclick="switchAdminTab('manage-photos')" id="atab-manage-photos" class="flex-1 py-1 px-2 rounded text-stone-300 hover:text-white transition">फोटो प्रबंधन (1 by 1)</button>
+                    <button onclick="switchAdminTab('change-pin')" id="atab-change-pin" class="flex-1 py-1 px-2 rounded text-stone-300 hover:text-white transition">पिन बदलू</button>
+                </div>
+
+                <!-- Tab 1: Upload Photo -->
+                <div id="adminTabContent-upload" class="space-y-4">
                     <div>
                         <label class="block font-semibold text-amber-200 mb-1">१. फोटो केर वर्ष चुनु:</label>
                         <select id="uploadYear" class="w-full p-2.5 rounded-lg bg-black/60 border border-stone-700 text-amber-100">
@@ -759,13 +787,30 @@
                     <div id="uploadLoader" class="hidden text-center text-amber-300 text-xs py-1">
                         <i class="fa-solid fa-circle-notch fa-spin mr-1"></i> कंप्रेस आ अपलोड भ' रहल अछि...
                     </div>
+                </div>
 
-                    <!-- Manage/Delete Photos Option -->
-                    <div class="mt-4 pt-3 border-t border-stone-800">
-                        <button onclick="clearUploadedPhotos()" class="text-[11px] text-rose-400 hover:text-rose-300 flex items-center gap-1">
-                            <i class="fa-solid fa-trash-can"></i> अपन अपलोड कयल फोटो रीसेट करू
-                        </button>
+                <!-- Tab 2: Manage Photos (Delete 1 by 1) -->
+                <div id="adminTabContent-manage-photos" class="hidden space-y-3">
+                    <p class="text-[11px] text-stone-400">जे फोटो हटाबय चाहैत छी, ओकर 'डिलीट' बटन दबाउ:</p>
+                    <div id="adminPhotoList" class="max-h-60 overflow-y-auto space-y-2 pr-1">
+                        <!-- Populated dynamically with delete buttons -->
                     </div>
+                </div>
+
+                <!-- Tab 3: Change Admin PIN -->
+                <div id="adminTabContent-change-pin" class="hidden space-y-3">
+                    <p class="text-[11px] text-stone-400">अपन नव गुप्त एडमिन पिन सेट करू:</p>
+                    <div>
+                        <label class="block text-stone-300 mb-1">नव सुरक्षा पिन (४ सं ६ अंक):</label>
+                        <input type="password" id="newAdminPin" maxlength="6" placeholder="नव पिन लिखू" class="w-full p-2 rounded-lg bg-black/60 border border-stone-700 text-amber-200 text-center tracking-widest font-mono">
+                    </div>
+                    <div>
+                        <label class="block text-stone-300 mb-1">पिन पुष्टि करू:</label>
+                        <input type="password" id="confirmAdminPin" maxlength="6" placeholder="दोबारा पिन लिखू" class="w-full p-2 rounded-lg bg-black/60 border border-stone-700 text-amber-200 text-center tracking-widest font-mono">
+                    </div>
+                    <button onclick="changeAdminPin()" class="w-full py-2 bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold rounded-lg transition">
+                        पिन अपडेट करू
+                    </button>
                 </div>
             </div>
         </div>
@@ -888,9 +933,22 @@
             customPhotos = [];
         }
 
+        // Custom entries added dynamically by members or admin
+        let customContributors = [];
+        try {
+            customContributors = JSON.parse(localStorage.getItem('khaware_custom_contributors')) || [];
+        } catch(e) {
+            customContributors = [];
+        }
+
         let currentTier = 'all';
         let viewMode = 'table';
-        const ADMIN_PIN = "7788";
+        let isAdminLoggedIn = false;
+        
+        // Persistent Admin PIN (Defaults to 7788 if not customized)
+        function getStoredPin() {
+            return localStorage.getItem('khaware_admin_pin') || "7788";
+        }
 
         function setViewMode(mode) {
             viewMode = mode;
@@ -924,7 +982,10 @@
             const query = (document.getElementById('searchInput').value || '').trim().toLowerCase();
             const sortVal = document.getElementById('sortSelect').value;
 
-            let filtered = contributors.filter(item => {
+            // Combine core contributors + custom added contributors
+            const allList = [...contributors, ...customContributors];
+
+            let filtered = allList.filter(item => {
                 const matchQuery = item.name.toLowerCase().includes(query) || 
                                    item.amount.toString().includes(query) ||
                                    (item.purpose && item.purpose.toLowerCase().includes(query));
@@ -948,6 +1009,16 @@
                 filtered.sort((a, b) => a.id - b.id);
             }
 
+            // Recalculate dynamic total & stats
+            const totalSum = allList.reduce((acc, curr) => acc + Number(curr.amount), 0);
+            const totalMembers = allList.length;
+            const statTotalEl = document.getElementById('stat-total-amount');
+            const statFooterEl = document.getElementById('stat-footer-total');
+            if (statTotalEl) statTotalEl.textContent = '₹ ' + totalSum.toLocaleString('en-IN');
+            if (statFooterEl) statFooterEl.textContent = '₹ ' + totalSum.toLocaleString('en-IN') + '/-';
+            const statMembersEl = document.querySelectorAll('.font-mono');
+            if (statMembersEl && statMembersEl[1]) statMembersEl[1].textContent = totalMembers;
+
             renderView(filtered);
         }
 
@@ -968,8 +1039,15 @@
             noResults.classList.add('hidden');
 
             list.forEach((item, index) => {
-                const formattedAmt = '₹ ' + item.amount.toLocaleString('en-IN');
+                const formattedAmt = '₹ ' + Number(item.amount).toLocaleString('en-IN');
                 const purposeBadge = item.purpose ? `<span class="inline-block bg-amber-500/20 text-amber-300 border border-amber-400/40 text-[10px] font-semibold px-2 py-0.5 rounded ml-2">${item.purpose}</span>` : '';
+
+                // If user is admin and item is custom, provide delete option
+                const deleteBtnHtml = (isAdminLoggedIn && item.isCustom) ? `
+                    <button onclick="deleteCustomContributor(${item.id})" class="ml-2 text-rose-400 hover:text-rose-200" title="प्रविष्टि हटाउ">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                ` : '';
 
                 // Table row
                 const tr = document.createElement('tr');
@@ -979,6 +1057,7 @@
                     <td class="py-3 px-3.5 font-medium text-stone-100">
                         ${item.name}
                         ${purposeBadge}
+                        ${deleteBtnHtml}
                     </td>
                     <td class="py-3 px-3.5 text-center text-xs text-stone-400 hidden sm:table-cell">
                         ${item.purpose ? item.purpose : 'सामान्य सहयोग'}
@@ -999,7 +1078,10 @@
                     <div>
                         <div class="flex items-center justify-between text-xs text-stone-400 mb-1.5">
                             <span class="font-mono">#${item.id}</span>
-                            <span class="text-emerald-400 text-[10px]"><i class="fa-solid fa-check"></i> प्राप्त</span>
+                            <div class="flex items-center gap-1">
+                                <span class="text-emerald-400 text-[10px]"><i class="fa-solid fa-check"></i> प्राप्त</span>
+                                ${deleteBtnHtml}
+                            </div>
                         </div>
                         <h4 class="font-bold text-sm text-stone-100">${item.name}</h4>
                         ${item.purpose ? `<p class="text-[11px] text-amber-300 mt-0.5">${item.purpose}</p>` : ''}
@@ -1011,6 +1093,60 @@
                 `;
                 cardsContainer.appendChild(card);
             });
+        }
+
+        // Public Submission (Anyone can add their name & payment)
+        function handlePublicContribution(e) {
+            e.preventDefault();
+            const name = document.getElementById('pubName').value.trim();
+            const amount = Number(document.getElementById('pubAmount').value);
+            const purpose = document.getElementById('pubPurpose').value.trim();
+
+            if (!name || !amount || amount <= 0) {
+                alert("कृपया नाम एवं वैध राशि भरू।");
+                return;
+            }
+
+            const allList = [...contributors, ...customContributors];
+            const newId = allList.length + 1;
+
+            const newEntry = {
+                id: newId,
+                name: name,
+                amount: amount,
+                purpose: purpose,
+                isCustom: true
+            };
+
+            customContributors.push(newEntry);
+            try {
+                localStorage.setItem('khaware_custom_contributors', JSON.stringify(customContributors));
+            } catch(err) {
+                console.warn("Storage full");
+            }
+
+            document.getElementById('pubName').value = '';
+            document.getElementById('pubAmount').value = '';
+            document.getElementById('pubPurpose').value = '';
+
+            filterAndRender();
+            showToast("सहयोग राशि प्रविष्टि सफलतापूर्वक जुड़ि गेल!");
+        }
+
+        // Admin-only: Delete custom contributor entry
+        function deleteCustomContributor(id) {
+            if (!isAdminLoggedIn) {
+                alert("ई प्रविष्टि हटाबय केर अधिकार मात्र एडमिन लग अछि।");
+                return;
+            }
+            if (confirm("की अहाँ ई प्रविष्टि डिलीट करबाक चाहैत छी?")) {
+                customContributors = customContributors.filter(item => item.id !== id);
+                try {
+                    localStorage.setItem('khaware_custom_contributors', JSON.stringify(customContributors));
+                } catch(e) {}
+                filterAndRender();
+                showToast("प्रविष्टि डिलीट भ' गेल!");
+            }
         }
 
         // Render Gallery Photos
@@ -1252,14 +1388,86 @@ D. उपाध्याय झा (चौथे पितामह)
             reader.readAsDataURL(file);
         }
 
-        function clearUploadedPhotos() {
-            if(confirm("की अहाँ अपन अपलोड कयल फोटो रीसेट करबाक चाहैत छी?")) {
-                localStorage.removeItem('khaware_custom_photos');
-                customPhotos = [];
-                filterGallery('all');
-                closeAdminModal();
-                showToast("फोटो रीसेट भ' गेल!");
+        // Admin Tabs switcher
+        function switchAdminTab(tabKey) {
+            ['upload', 'manage-photos', 'change-pin'].forEach(k => {
+                const btn = document.getElementById('atab-' + k);
+                const content = document.getElementById('adminTabContent-' + k);
+                if (k === tabKey) {
+                    btn.className = "flex-1 py-1 px-2 rounded bg-amber-500 text-stone-950 font-bold transition";
+                    content.classList.remove('hidden');
+                } else {
+                    btn.className = "flex-1 py-1 px-2 rounded text-stone-300 hover:text-white transition";
+                    content.classList.add('hidden');
+                }
+            });
+
+            if (tabKey === 'manage-photos') {
+                populateAdminPhotoManager();
             }
+        }
+
+        // Populate photo manager for deleting 1-by-1
+        function populateAdminPhotoManager() {
+            const listContainer = document.getElementById('adminPhotoList');
+            listContainer.innerHTML = '';
+
+            if (customPhotos.length === 0) {
+                listContainer.innerHTML = '<p class="text-stone-400 text-center py-4 text-xs">कोनो अपलोड कयल फोटो उपलब्ध नहि अछि।</p>';
+                return;
+            }
+
+            customPhotos.forEach(photo => {
+                const row = document.createElement('div');
+                row.className = "flex items-center justify-between p-2 rounded-lg bg-black/60 border border-stone-800";
+                row.innerHTML = `
+                    <div class="flex items-center gap-2">
+                        <img src="${photo.url}" class="w-10 h-10 object-cover rounded border border-stone-700">
+                        <div>
+                            <p class="font-bold text-amber-200 text-xs">${photo.title}</p>
+                            <span class="text-[10px] text-stone-400 font-mono">${photo.year}</span>
+                        </div>
+                    </div>
+                    <button onclick="deleteSinglePhoto(${photo.id})" class="px-2.5 py-1 bg-rose-900/60 hover:bg-rose-700 text-rose-200 rounded text-[11px] font-semibold border border-rose-500/40 transition">
+                        <i class="fa-solid fa-trash-can mr-1"></i> डिलीट
+                    </button>
+                `;
+                listContainer.appendChild(row);
+            });
+        }
+
+        // Delete Single Photo (1 by 1)
+        function deleteSinglePhoto(photoId) {
+            if (confirm("की अहाँ ई फोटो डिलीट करबाक चाहैत छी?")) {
+                customPhotos = customPhotos.filter(p => p.id !== photoId);
+                try {
+                    localStorage.setItem('khaware_custom_photos', JSON.stringify(customPhotos));
+                } catch(e) {}
+                filterGallery('all');
+                populateAdminPhotoManager();
+                showToast("फोटो हटा देल गेल!");
+            }
+        }
+
+        // Change Admin PIN
+        function changeAdminPin() {
+            const newPin = (document.getElementById('newAdminPin').value || '').trim();
+            const confirmPin = (document.getElementById('confirmAdminPin').value || '').trim();
+
+            if (!newPin || newPin.length < 4) {
+                alert("पिन न्यूनतम ४ अंकक होबाक चाही!");
+                return;
+            }
+            if (newPin !== confirmPin) {
+                alert("दुनू पिन मेल नहि खाइत अछि!");
+                return;
+            }
+
+            localStorage.setItem('khaware_admin_pin', newPin);
+            document.getElementById('newAdminPin').value = '';
+            document.getElementById('confirmAdminPin').value = '';
+            showToast("सुरक्षा पिन सफलतापूर्वक बदलि गेल!");
+            switchAdminTab('upload');
         }
 
         // Admin Modal Controls
@@ -1271,18 +1479,23 @@ D. उपाध्याय झा (चौथे पितामह)
         }
         function verifyAdminPin() {
             const pin = document.getElementById('adminPinInput').value;
-            if (pin === ADMIN_PIN) {
+            const validPin = getStoredPin();
+            if (pin === validPin) {
+                isAdminLoggedIn = true;
                 document.getElementById('adminPinStep').classList.add('hidden');
                 document.getElementById('adminPanelStep').classList.remove('hidden');
                 document.getElementById('pinError').classList.add('hidden');
+                filterAndRender(); // Re-render to show admin delete icons if any
             } else {
                 document.getElementById('pinError').classList.remove('hidden');
             }
         }
         function logoutAdmin() {
+            isAdminLoggedIn = false;
             document.getElementById('adminPanelStep').classList.add('hidden');
             document.getElementById('adminPinStep').classList.remove('hidden');
             document.getElementById('adminPinInput').value = '';
+            filterAndRender(); // Hide admin controls
         }
 
         function copyFormattedWhatsAppList() {

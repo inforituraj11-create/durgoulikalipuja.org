@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>काली पूजा खौआरे परिवार, दुर्गौली – २०२६ सहयोग राशि सूची एवं डिजिटल धरोहर</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Rozha+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Firebase SDKs (Compat version for smooth standalone browser integration) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            900: '#580816',
+                            950: '#2b030a',
+                        },
+                        gold: {
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                        }
+                    },
+                    fontFamily: {
+                        devanagari: ['"Noto Sans Devanagari"', 'sans-serif'],
+                        rozha: ['"Rozha One"', 'serif'],
+                        cinzel: ['Cinzel', 'serif'],
+                        sans: ['Poppins', '"Noto Sans Devanagari"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+            background-color: #1e0207;
+            color: #fdfbf7;
+        }
+        .royal-dot-bg {
+            background-color: #260209;
+            background-image: radial-gradient(rgba(234, 179, 8, 0.28) 1.2px, transparent 1.2px);
+            background-size: 26px 26px;
+        }
+        .header-bg {
+            background: linear-gradient(180deg, #180105 0%, #29030b 100%);
+        }
+        .card-dark {
+            background: rgba(43, 3, 10, 0.88);
+            border: 1px solid rgba(234, 179, 8, 0.25);
+            backdrop-filter: blur(8px);
+        }
+        .card-dark:hover {
+            border-color: rgba(234, 179, 8, 0.55);
+        }
+        .gold-shimmer {
+            background: linear-gradient(90deg, #ffffff 0%, #ffdf79 45%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .ancestor-box {
+            background: rgba(20, 1, 5, 0.9);
+            border: 1px solid rgba(234, 179, 8, 0.2);
+        }
+        .ancestor-box:hover {
+            border-color: rgba(234, 179, 8, 0.6);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col royal-dot-bg">
+
+    <!-- Top Ribbon -->
+    <aside class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 text-stone-950 text-xs sm:text-sm font-bold py-1.5 px-4 text-center tracking-wide shadow-md flex items-center justify-center gap-2">
+        <span>ॐ</span>
+        <span>।। जय माँ काली ।। खौआरे परिवार दुर्गौली – वार्षिक काली पूजा २०२६ सहयोग राशि सूची</span>
+        <span>ॐ</span>
+    </aside>
+
+    <!-- Header / Navbar -->
+    <header class="header-bg sticky top-0 z-40 border-b border-amber-500/25 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-full bg-amber-500/15 border-2 border-amber-400 flex items-center justify-center text-amber-400 text-xl shadow-inner">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg sm:text-xl font-bold tracking-tight text-amber-200 font-devanagari">
+                        काली पूजा खौआरे परिवार
+                    </h1>
+                    <p class="text-xs text-amber-300/80 font-medium">
+                        दुर्गौली • वर्ष २०२६ (७९ सदस्यक सूची)
+                    </p>
+                </div>
+            </a>
+
+            <!-- Right Buttons -->
+            <div class="flex items-center gap-2.5">
+                <a href="#listSection" class="hidden sm:inline-flex items-center gap-1.5 bg-brand-950 hover:bg-black text-amber-300 text-xs font-semibold px-3.5 py-2 rounded-lg border border-amber-500/30 transition">
+                    <i class="fa-solid fa-bars-staggered text-xs"></i>
+                    <span>सहयोग सूची</span>
+                </a>
+                <a href="#vanshavaliSection" class="hidden md:inline-flex items-center gap-1.5 bg-brand-950 hover:bg-black text-amber-300 text-xs font-semibold px-3.5 py-2 rounded-lg border border-amber-500/30 transition">
+                    <i class="fa-solid fa-sitemap text-xs"></i>
+                    <span>वंशावली</span>
+                </a>
+                <a href="#gallerySection" class="hidden md:inline-flex items-center gap-1.5 bg-brand-950 hover:bg-black text-amber-300 text-xs font-semibold px-3.5 py-2 rounded-lg border border-amber-500/30 transition">
+                    <i class="fa-regular fa-image text-xs"></i>
+                    <span>गैलरी</span>
+                </a>
+                <button onclick="shareOnWhatsApp()" class="inline-flex items-center gap-1.5 bg-emerald-700 hover:bg-emerald-600 text-white text-xs sm:text-sm font-semibold px-3.5 py-2 rounded-lg shadow transition">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span class="hidden sm:inline">व्हाट्सएप पर साझा करू</span>
+                </button>
+                <button onclick="window.print()" class="inline-flex items-center gap-1.5 bg-amber-600 hover:bg-amber-500 text-stone-950 text-xs sm:text-sm font-bold px-3 py-2 rounded-lg shadow transition">
+                    <i class="fa-solid fa-print"></i>
+                    <span class="hidden sm:inline">प्रिंट / PDF</span>
+                </button>
+                <button onclick="openAdminModal()" class="w-8 h-8 rounded-lg bg-black/40 hover:bg-black text-amber-300 border border-amber-400/40 flex items-center justify-center text-xs transition" title="एडमिन पोर्टल">
+                    <i class="fa-solid fa-lock"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-10 pb-14 px-4 text-center relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-black/40 border border-amber-400/30 text-amber-300 text-xs sm:text-sm mb-4">
+                <i class="fa-solid fa-hands-praying text-amber-400"></i>
+                <span class="font-bold tracking-wider">।। ॐ क्रीं कालिकायै नमः ।।</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-5xl font-extrabold font-rozha tracking-wide mb-2 gold-shimmer">
+                काली पूजा खौआरे परिवार, दुर्गौली
+            </h2>
+            <p class="text-xs sm:text-sm text-amber-400 font-semibold tracking-wide mb-4">
+                वार्षिक काली पूजा २०२६ – अधिकृत सहयोग राशि विवरणी
+            </p>
+            <p class="text-xs sm:text-sm text-rose-100/80 max-w-2xl mx-auto leading-relaxed mb-8">
+                खौआरे परिवारक समस्त सदस्यक आदरणीय सहयोग सं कुलदेवी माँ श्यामा कालीक पूजनोत्सव भव्य रूपेण संपन्न होयत। परिवारक अखंडता एवं पारदर्शिताक लेल सभ सहयोगकर्ताक सूची नीचाँ प्रस्तुत अछि।
+            </p>
+
+            <!-- 4 Stat Cards -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto">
+                <div class="card-dark rounded-xl p-4 text-center transition">
+                    <span class="text-xs text-rose-200/90 block mb-1">कुल संकलित राशि</span>
+                    <span class="text-xl sm:text-2xl font-extrabold text-amber-300 block font-mono" id="stat-total-amount">₹ ३,०२,९७५</span>
+                    <span class="text-[11px] text-emerald-400 font-medium">सत्यापित सहयोग</span>
+                </div>
+
+                <div class="card-dark rounded-xl p-4 text-center transition">
+                    <span class="text-xs text-rose-200/90 block mb-1">कुल सहयोगकर्ता</span>
+                    <span class="text-xl sm:text-2xl font-extrabold text-amber-300 block font-mono" id="stat-total-members">७९</span>
+                    <span class="text-[11px] text-rose-200/80 font-medium">परिवारजन एवं शाखा</span>
+                </div>
+
+                <div class="card-dark rounded-xl p-4 text-center transition">
+                    <span class="text-xs text-rose-200/90 block mb-1">प्रतिमा वास्ते</span>
+                    <span class="text-lg sm:text-xl font-extrabold text-amber-300 block font-mono">₹ २१,००१</span>
+                    <span class="text-[11px] text-amber-200/90 truncate block">श्री प्रभु कांत झा</span>
+                </div>
+
+                <div class="card-dark rounded-xl p-4 text-center transition">
+                    <span class="text-xs text-rose-200/90 block mb-1">हवन वास्ते</span>
+                    <span class="text-lg sm:text-xl font-extrabold text-amber-300 block font-mono">₹ १५,५५५</span>
+                    <span class="text-[11px] text-amber-200/90 truncate block">श्रीमती स्वाति झा</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main List Container -->
+    <main id="listSection" class="max-w-6xl mx-auto px-4 sm:px-6 pb-12 flex-1 w-full">
+
+        <!-- Header Controls -->
+        <div class="mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-amber-500/20 pb-4">
+            <div>
+                <h3 class="text-xl sm:text-2xl font-bold text-amber-300 font-devanagari flex items-center gap-2">
+                    <span>सहयोग राशि सूची (<span id="activeYearHeading">२०२६</span>)</span>
+                </h3>
+                <p class="text-xs text-rose-200/70">
+                    नाम अथवा राशि सं खोजू | वर्तमान प्रदर्शित सदस्य: <span id="displayCount" class="font-bold text-amber-400">79</span>
+                </p>
+            </div>
+
+            <!-- Copy WhatsApp & View Toggles -->
+            <div class="flex items-center gap-2 flex-wrap">
+                <button onclick="copyFormattedWhatsAppList()" class="bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-semibold px-3 py-2 rounded-lg flex items-center gap-1.5 shadow transition">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp सूची कॉपी</span>
+                </button>
+                <div class="inline-flex rounded-lg border border-amber-500/30 p-0.5 bg-black/40 text-xs">
+                    <button onclick="setViewMode('table')" id="btn-view-table" class="px-2.5 py-1.5 rounded-md text-amber-200 font-medium flex items-center gap-1 bg-amber-500/20">
+                        <i class="fa-solid fa-table-list"></i> तालिका
+                    </button>
+                    <button onclick="setViewMode('cards')" id="btn-view-cards" class="px-2.5 py-1.5 rounded-md text-stone-400 hover:text-amber-200 font-medium flex items-center gap-1">
+                        <i class="fa-solid fa-grip"></i> कार्ड्स
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Year Selector Bar (2026, 2025, 2024 Records) -->
+        <div class="card-dark rounded-xl p-3 mb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border border-amber-500/25">
+            <div class="flex items-center gap-2 text-xs text-amber-300 font-semibold">
+                <i class="fa-regular fa-calendar-check text-amber-400"></i>
+                <span>वर्ष चयन (Select Year):</span>
+                <span class="text-stone-400 text-[11px] font-normal hidden md:inline">पूर्व वर्षक चंदा एवं हिसाब देखबाक लेल वर्ष चुनु</span>
+            </div>
+            <div class="flex items-center gap-1.5 bg-black/50 p-1 rounded-lg border border-stone-800 text-xs">
+                <button onclick="switchActiveYear('2026')" id="year-btn-2026" class="px-3 py-1 rounded-md bg-amber-500 text-stone-950 font-bold transition">२०२६ (चालू)</button>
+                <button onclick="switchActiveYear('2025')" id="year-btn-2025" class="px-3 py-1 rounded-md text-stone-300 hover:text-white transition">२०२५</button>
+                <button onclick="switchActiveYear('2024')" id="year-btn-2024" class="px-3 py-1 rounded-md text-stone-300 hover:text-white transition">२०२४</button>
+            </div>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="card-dark rounded-xl p-4 mb-6">
+            <div class="flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
+                <div class="relative flex-1">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 text-xs"></i>
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        oninput="filterAndRender()" 
+                        placeholder="नाम अथवा राशि सं खोजू (उदा. वीरेन्द्र, वकील, 5101)..." 
+                        class="w-full pl-9 pr-4 py-2 rounded-lg bg-black/50 border border-stone-700 text-amber-100 placeholder-stone-500 focus:outline-none focus:border-amber-400 text-xs sm:text-sm"
+                    >
+                </div>
+                <div class="w-full md:w-56">
+                    <select 
+                        id="sortSelect" 
+                        onchange="filterAndRender()" 
+                        class="w-full py-2 px-3 rounded-lg bg-black/50 border border-stone-700 text-amber-200 text-xs sm:text-sm focus:outline-none focus:border-amber-400"
+                    >
+                        <option value="serial">क्रम संख्या (१ सं ७९)</option>
+                        <option value="high">राशि: अधिकतम सं न्यूनतम</option>
+                        <option value="low">राशि: न्यूनतम सं अधिकतम</option>
+                        <option value="name">नाम वर्णमाला अनुसार</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Tiers -->
+            <div class="mt-3 pt-3 border-t border-stone-800 flex flex-wrap gap-1.5 items-center text-xs">
+                <span class="text-stone-400 text-[11px] mr-1">श्रेणी फ़िल्टर:</span>
+                <button onclick="setTierFilter('all')" id="btn-tier-all" class="tier-pill px-2.5 py-1 rounded-full border bg-amber-500 text-stone-950 border-amber-500 font-bold">सभ (७९)</button>
+                <button onclick="setTierFilter('10k')" id="btn-tier-10k" class="tier-pill px-2.5 py-1 rounded-full border bg-black/40 text-stone-300 border-stone-700 hover:border-amber-400">₹१०,०००+</button>
+                <button onclick="setTierFilter('5k')" id="btn-tier-5k" class="tier-pill px-2.5 py-1 rounded-full border bg-black/40 text-stone-300 border-stone-700 hover:border-amber-400">₹५,००० - ₹९,९९९</button>
+                <button onclick="setTierFilter('2k')" id="btn-tier-2k" class="tier-pill px-2.5 py-1 rounded-full border bg-black/40 text-stone-300 border-stone-700 hover:border-amber-400">₹२,००० - ₹४,९९९</button>
+                <button onclick="setTierFilter('sub2k')" id="btn-tier-sub2k" class="tier-pill px-2.5 py-1 rounded-full border bg-black/40 text-stone-300 border-stone-700 hover:border-amber-400">₹२,००० सं कम</button>
+            </div>
+        </div>
+
+        <!-- Table View Container -->
+        <div id="tableViewContainer" class="card-dark rounded-xl overflow-hidden border border-amber-500/25">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs sm:text-sm border-collapse">
+                    <thead>
+                        <tr class="bg-black/60 text-amber-300 uppercase tracking-wider text-[11px] border-b border-stone-800">
+                            <th class="py-3 px-3.5 text-center w-14">क्र.</th>
+                            <th class="py-3 px-3.5 font-bold">सहयोगकर्ताक नाम एवं विवरण</th>
+                            <th class="py-3 px-3.5 text-center hidden sm:table-cell">उद्देश्य / शाखा</th>
+                            <th class="py-3 px-3.5 text-right font-bold">सहयोग राशि</th>
+                            <th class="py-3 px-3.5 text-center w-20">स्थिति</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contributorTableBody" class="divide-y divide-stone-800/60 font-sans">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="noResults" class="hidden py-10 text-center text-stone-400">
+                <i class="fa-solid fa-magnifying-glass text-2xl mb-2 text-stone-600"></i>
+                <p class="text-xs">कोनो सदस्य नहि भेटल। कृपया वर्तनी जाँचू।</p>
+            </div>
+
+            <div class="bg-black/70 p-3.5 border-t border-amber-500/30 flex items-center justify-between text-xs sm:text-sm">
+                <span class="font-bold text-amber-200">काली पूजा २०२६ – संकलित कुल योग:</span>
+                <span class="font-extrabold text-amber-400 font-mono text-base" id="tableTotalAmount">₹ ३,०२,९७५/-</span>
+            </div>
+        </div>
+
+        <!-- Cards View Container -->
+        <div id="cardsViewContainer" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            <!-- Rendered by JS -->
+        </div>
+
+        <!-- Self-Add Entry Form (Public Entry / Firebase Sync) -->
+        <div class="mt-4 card-dark rounded-xl p-4 border border-amber-500/30">
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-stone-800 flex-wrap gap-2">
+                <div class="flex items-center gap-2 text-amber-300 font-bold text-xs sm:text-sm font-devanagari">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span>अपन सहयोग राशि प्रविष्टि जोड़ू (Self-Add Entry - <span id="entryYearLabel">२०२६</span>)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <label class="text-[11px] text-stone-400">वर्ष:</label>
+                    <select id="selfYearSelect" onchange="syncEntryYearWithSelect()" class="bg-black/60 border border-stone-700 text-amber-200 text-xs rounded px-2 py-0.5">
+                        <option value="2026" selected>२०२६</option>
+                        <option value="2025">२०२५</option>
+                        <option value="2024">२०२४</option>
+                    </select>
+                    <span class="text-[11px] text-stone-400 italic hidden sm:inline">* सहयोग पठेलाक उपरांत एतय भरू</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-2.5 items-center">
+                <div class="sm:col-span-4">
+                    <input type="text" id="selfName" placeholder="सहयोगकर्ताक नाम (उदा. श्री..." class="w-full py-2 px-3 rounded-lg bg-black/60 border border-stone-700 text-amber-100 placeholder-stone-500 text-xs focus:outline-none focus:border-amber-400">
+                </div>
+                <div class="sm:col-span-3">
+                    <input type="number" id="selfAmount" placeholder="राशि (₹)" class="w-full py-2 px-3 rounded-lg bg-black/60 border border-stone-700 text-amber-100 placeholder-stone-500 text-xs focus:outline-none focus:border-amber-400">
+                </div>
+                <div class="sm:col-span-3">
+                    <input type="text" id="selfPurpose" placeholder="उद्देश्य / शाखा (ऐच्छिक)" class="w-full py-2 px-3 rounded-lg bg-black/60 border border-stone-700 text-amber-100 placeholder-stone-500 text-xs focus:outline-none focus:border-amber-400">
+                </div>
+                <div class="sm:col-span-2">
+                    <button onclick="submitSelfEntry()" class="w-full py-2 bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold rounded-lg text-xs flex items-center justify-center gap-1.5 shadow transition">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>सूची मे जोड़ू</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. वंशावली सेक्शन (Authentic Jha Family Tree - Word-for-Word by Sri Jatashankar Jha) -->
+        <section id="vanshavaliSection" class="mt-14 card-dark rounded-2xl p-6 sm:p-8 text-center border border-amber-500/30">
+            <div class="max-w-5xl mx-auto">
+                <span class="text-[11px] font-bold text-amber-300 uppercase tracking-widest bg-amber-500/15 border border-amber-500/40 px-3 py-1 rounded-full">
+                    <i class="fa-solid fa-sitemap mr-1"></i> पारिवारिक वंशावली
+                </span>
+                <h3 class="text-2xl sm:text-3xl font-bold text-amber-100 font-rozha mt-3 mb-1">
+                    झा परिवार की वंशावली
+                </h3>
+                <p class="text-xs sm:text-sm text-amber-300/90 italic mb-2">
+                    यह दस्तावेज़ श्री जटाशंकर झा द्वारा प्रदान की गई जानकारी पर आधारित है।
+                </p>
+                <div class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-200 text-xs font-semibold mb-8">
+                    मूल पूर्वज (पर-पितामह की पीढ़ी): तीन भाई देवी झा, बंसी झा, और रुद्रमणि झा।
+                </div>
+
+                <!-- Filters & Search in Vanshavali -->
+                <div class="card-dark rounded-xl p-3 sm:p-4 mb-6 text-left border border-amber-500/20">
+                    <div class="flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
+                        <div class="flex flex-wrap gap-1.5 items-center text-xs">
+                            <span class="text-stone-400 text-[11px] mr-1">शाखा फ़िल्टर:</span>
+                            <button onclick="filterVanshavaliBranch('all')" id="vbranch-btn-all" class="px-2.5 py-1 rounded-full bg-amber-500 text-stone-950 font-bold border border-amber-500">समस्त शाखा (तीनों भाई)</button>
+                            <button onclick="filterVanshavaliBranch('devi')" id="vbranch-btn-devi" class="px-2.5 py-1 rounded-full bg-black/40 text-stone-300 border border-stone-700 hover:border-amber-400">१. देवी झा की शाखा</button>
+                            <button onclick="filterVanshavaliBranch('bansi')" id="vbranch-btn-bansi" class="px-2.5 py-1 rounded-full bg-black/40 text-stone-300 border border-stone-700 hover:border-amber-400">२. बंसी झा की शाखा</button>
+                            <button onclick="filterVanshavaliBranch('rudra')" id="vbranch-btn-rudra" class="px-2.5 py-1 rounded-full bg-black/40 text-stone-300 border border-stone-700 hover:border-amber-400">३. रुद्रमणि झा की शाखा</button>
+                        </div>
+                        <div class="relative w-full md:w-64">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-xs"></i>
+                            <input type="text" id="vanshavaliSearch" oninput="searchInVanshavali()" placeholder="वंशावली में खोजें (उदा. जटाशंकर, प्रभु कांत)..." class="w-full pl-8 pr-3 py-1.5 rounded-lg bg-black/60 border border-stone-700 text-xs text-amber-200 focus:outline-none focus:border-amber-400">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Tree Cards -->
+                <div class="space-y-6 text-left text-xs" id="vanshavaliContainer">
+                    
+                    <!-- 1. देवी झा की शाखा -->
+                    <div class="vanshavali-block card-dark rounded-xl p-5 border border-amber-500/25" data-branch="devi">
+                        <div class="flex items-center gap-3 pb-3 mb-4 border-b border-stone-800">
+                            <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-300 font-bold flex items-center justify-center text-sm border border-amber-400/40">१</span>
+                            <div>
+                                <h4 class="text-base font-bold text-amber-200 font-devanagari">1. देवी झा की शाखा</h4>
+                                <p class="text-[11px] text-stone-400">मूल पूर्वज की प्रथम शाखा</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="ancestor-box p-3.5 rounded-lg">
+                                <span class="text-amber-400 font-bold block mb-1 text-sm">अयोध्या झा (पुत्र)</span>
+                                <div class="pl-2.5 border-l-2 border-amber-500/30 space-y-1 text-stone-300">
+                                    <p class="font-semibold text-stone-200">• सत्यनारायण झा (पौत्र)</p>
+                                    <p class="pl-3 text-stone-400">↳ महेश कांत झा (परपौत्र)</p>
+                                    <p class="pl-3 text-stone-400">↳ श्यामा कांत झा (परपौत्र)</p>
+                                </div>
+                            </div>
+
+                            <div class="ancestor-box p-3.5 rounded-lg">
+                                <span class="text-amber-400 font-bold block mb-1 text-sm">टुनकू झा (पुत्र)</span>
+                                <div class="pl-2.5 border-l-2 border-amber-500/30 text-stone-300">
+                                    <p class="text-stone-300">• परिवार में हरे राम, ननकू आदि शामिल</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. बंसी झा की शाखा -->
+                    <div class="vanshavali-block card-dark rounded-xl p-5 border border-amber-500/25" data-branch="bansi">
+                        <div class="flex items-center gap-3 pb-3 mb-4 border-b border-stone-800">
+                            <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-300 font-bold flex items-center justify-center text-sm border border-amber-400/40">२</span>
+                            <div>
+                                <h4 class="text-base font-bold text-amber-200 font-devanagari">2. बंसी झा की शाखा</h4>
+                                <p class="text-[11px] text-stone-400">मूल पूर्वज की द्वितीय शाखा</p>
+                            </div>
+                        </div>
+
+                        <div class="ancestor-box p-3.5 rounded-lg">
+                            <span class="text-amber-400 font-bold block mb-1 text-sm">दुखहरण झा (पुत्र)</span>
+                            <div class="pl-2.5 border-l-2 border-amber-500/30 space-y-1 text-stone-300">
+                                <p class="font-semibold text-stone-200">• दत्त नारायण झा (दर्पनारायण) (पौत्र)</p>
+                                <p class="pl-3 text-stone-400">↳ मुरारी झा (परपौत्र)</p>
+                                <p class="pl-3 text-stone-400">↳ हकरू (परपौत्र)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. रुद्रमणि झा की शाखा -->
+                    <div class="vanshavali-block card-dark rounded-xl p-5 border border-amber-500/25" data-branch="rudra">
+                        <div class="flex items-center gap-3 pb-3 mb-4 border-b border-stone-800">
+                            <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-300 font-bold flex items-center justify-center text-sm border border-amber-400/40">३</span>
+                            <div>
+                                <h4 class="text-base font-bold text-amber-200 font-devanagari">3. रुद्रमणि झा की शाखा</h4>
+                                <p class="text-[11px] text-amber-300/80">रुद्रमणि झा के चार पुत्र (जटाशंकर झा के चार पितामह) और उनके वंशजों का विवरण:</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- A. बबुए झा -->
+                            <div class="ancestor-box p-3.5 rounded-lg">
+                                <span class="text-amber-400 font-bold block mb-2 text-sm">A. बबुए झा (प्रथम पितामह - जटाशंकर झा के दादा)</span>
+                                <div class="pl-2.5 border-l-2 border-amber-500/30 space-y-2 text-stone-300">
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• नेवा लाल झा (पुत्र)</p>
+                                        <p class="pl-3 text-stone-400">| पुत्र: काली कांत</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• मधु कांत झा (पुत्र)</p>
+                                        <p class="pl-3 text-stone-400">| पुत्र: रवि बाबू</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• भोली झा (पुत्र)</p>
+                                        <p class="pl-3 text-amber-300 font-bold">| पुत्र: जटाशंकर झा</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• राज कांत झा (पुत्र)</p>
+                                        <p class="pl-3 text-stone-400 italic">| नोट: ये धनौजा चले गए थे।</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- B. दूसरे पितामह -->
+                            <div class="ancestor-box p-3.5 rounded-lg">
+                                <span class="text-amber-400 font-bold block mb-2 text-sm">B. दूसरे पितामह के वंशज</span>
+                                <div class="pl-2.5 border-l-2 border-amber-500/30 space-y-2 text-stone-300">
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• कपिलेश्वर झा</p>
+                                        <p class="pl-3 text-stone-400">| पुत्र: प्रताप बाबू</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• उमाकांत झा</p>
+                                        <p class="pl-3 text-stone-400">| पुत्र: नरसिंह</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• जुगेश्वर झा</p>
+                                        <p class="pl-3 text-stone-400">| पुत्र: लंबोदर और दामोदर</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• विशेश्वर झा</p>
+                                        <p class="pl-3 text-stone-400">| (केवल दो पुत्रियाँ)</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• कुशेश्वर झा</p>
+                                        <p class="pl-3 text-stone-400">| पुत्र: कुमार झा</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- C. नचारी झा -->
+                            <div class="ancestor-box p-3.5 rounded-lg">
+                                <span class="text-amber-400 font-bold block mb-2 text-sm">C. नचारी झा (तीसरे पितामह)</span>
+                                <div class="pl-2.5 border-l-2 border-amber-500/30 space-y-2 text-stone-300">
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• शोभाकांत झा (पुत्र)</p>
+                                        <p class="pl-3 text-stone-400">| संतान: एक पुत्री</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• राधाकांत झा (पुत्र)</p>
+                                        <p class="pl-3 text-stone-400">| पुत्र: प्रेमचंद, प्रफुल्ल आदि</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• वैद्यनाथ बाबू (पुत्र)</p>
+                                        <p class="pl-3 text-stone-400">| पुत्र: बड़े गणेश बाबू</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• जयनाथ बाबू (मास्टर साहब) (पुत्र)</p>
+                                        <p class="pl-3 text-stone-400">| पुत्र: नरेश कांत, नारायण, प्रभु कांत</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- D. उपाध्याय झा -->
+                            <div class="ancestor-box p-3.5 rounded-lg">
+                                <span class="text-amber-400 font-bold block mb-2 text-sm">D. उपाध्याय झा (चौथे पितामह)</span>
+                                <div class="pl-2.5 border-l-2 border-amber-500/30 space-y-2 text-stone-300">
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• चक्रधर झा (पुत्र)</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• श्रीधर झा (पुत्र)</p>
+                                        <p class="pl-3 text-stone-400">| पुत्र: देवा बाबू</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• चित्रधर (कुला बाबू) (पुत्र)</p>
+                                        <p class="pl-3 text-stone-400">| पुत्र: वेदा बाबू</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-stone-200">• शशिधर झा</p>
+                                        <p class="pl-3 text-stone-400 italic">| (पुत्र- कोई संतान नहीं)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Vanshavali Actions -->
+                <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+                    <button onclick="copyVanshavaliText()" class="px-4 py-2 bg-black/60 hover:bg-black text-amber-300 border border-amber-500/40 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>वंशावली पाठ कॉपी करें</span>
+                    </button>
+                    <button onclick="openVanshavaliModal()" class="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-stone-950 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>मूल दस्तावेज़ पाठ (फुलस्क्रीन)</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. वर्षवार फोटो गैलरी (100% Genuine Kali Puja Photos, Zero Dummy) -->
+        <section id="gallerySection" class="mt-14 card-dark rounded-2xl p-6 sm:p-8 border border-amber-500/30">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-stone-800 pb-4 mb-6">
+                <div>
+                    <span class="text-[11px] font-bold text-amber-300 uppercase tracking-widest bg-amber-500/15 border border-amber-500/40 px-3 py-1 rounded-full">
+                        <i class="fa-regular fa-images mr-1"></i> डिजिटल धरोहर
+                    </span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-amber-100 font-rozha mt-2">
+                        काली पूजा फोटो गैलरी (वर्षवार)
+                    </h3>
+                </div>
+
+                <!-- Gallery Year Filter -->
+                <div class="flex items-center gap-1.5 bg-black/50 p-1 rounded-xl text-xs border border-stone-800">
+                    <button onclick="filterGallery('all')" id="gal-btn-all" class="px-3 py-1.5 rounded-lg bg-amber-500 text-stone-950 font-bold transition">सभ फोटो</button>
+                    <button onclick="filterGallery('2026')" id="gal-btn-2026" class="px-3 py-1.5 rounded-lg text-stone-300 hover:text-white transition">२०२६</button>
+                    <button onclick="filterGallery('2025')" id="gal-btn-2025" class="px-3 py-1.5 rounded-lg text-stone-300 hover:text-white transition">२०२५</button>
+                    <button onclick="filterGallery('2024')" id="gal-btn-2024" class="px-3 py-1.5 rounded-lg text-stone-300 hover:text-white transition">२०२४</button>
+                </div>
+            </div>
+
+            <!-- Photos Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5" id="galleryGrid">
+                <!-- Rendered dynamically -->
+            </div>
+
+            <!-- Upload Button -->
+            <div class="mt-8 text-center">
+                <button onclick="openAdminModal()" class="inline-flex items-center gap-2 text-xs font-bold text-amber-300 hover:text-amber-200 bg-black/50 border border-amber-500/40 px-5 py-2.5 rounded-xl transition shadow">
+                    <i class="fa-solid fa-cloud-arrow-up text-amber-400"></i>
+                    <span>अपन मोबाइल गैलरी सं फोटो अपलोड करू</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- 4. सहयोग प्रेषण विवरणी -->
+        <section id="paymentSection" class="mt-14 card-dark rounded-2xl p-6 sm:p-8 text-center border border-amber-500/30">
+            <div class="max-w-2xl mx-auto">
+                <span class="text-[11px] font-bold text-amber-300 uppercase tracking-widest bg-amber-500/15 border border-amber-500/40 px-3 py-1 rounded-full">अंशदान एवं सहयोग</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-amber-100 font-rozha mt-3 mb-1">
+                    सहयोग राशि प्रेषण विवरणी
+                </h3>
+                <p class="text-xs text-rose-100/70 mb-6">
+                    जँ कोनो परिवारक सदस्य अपन सहयोग राशि ऑनलाइन पठेबाक चाहैत छथि, तँ नीचाँ देल अधिकृत माध्यम सं पठबि सकैत छथि:
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left text-xs">
+                    <div class="p-4 rounded-xl border border-stone-800 bg-black/40">
+                        <div class="flex items-center gap-2 text-amber-300 font-bold mb-2">
+                            <i class="fa-solid fa-qrcode text-sm"></i>
+                            <span>UPI / QR कोड</span>
+                        </div>
+                        <p class="text-stone-400 mb-1">UPI ID:</p>
+                        <div class="flex items-center justify-between bg-black/60 px-3 py-2 rounded-lg border border-stone-700 text-amber-200 font-mono font-bold">
+                            <span id="upiText">khaware.puja@upi</span>
+                            <button onclick="copyToClipboard('upiText')" class="text-amber-400 hover:text-amber-300 ml-2" title="कॉपी करू">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border border-stone-800 bg-black/40">
+                        <div class="flex items-center gap-2 text-amber-300 font-bold mb-2">
+                            <i class="fa-solid fa-building-columns text-sm"></i>
+                            <span>बैंक खाता विवरणी</span>
+                        </div>
+                        <div class="space-y-1.5 text-stone-300">
+                            <p><span class="text-stone-400">खाता:</span> काली पूजा समिति दुर्गौली</p>
+                            <p><span class="text-stone-400">बैंक:</span> भारतीय स्टेट बैंक (SBI)</p>
+                            <p><span class="text-stone-400">खाता सं.:</span> WhatsApp ग्रुप मे उपलब्ध</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/90 text-stone-400 py-8 px-4 text-center text-xs border-t border-stone-800">
+        <div class="max-w-4xl mx-auto space-y-2">
+            <h4 class="text-amber-400 text-base font-bold font-devanagari">
+                काली पूजा खौआरे परिवार, दुर्गौली
+            </h4>
+            <p class="text-stone-400 max-w-xl mx-auto leading-relaxed">
+                सभ सहयोगकर्ताक प्रति हार्दिक आभार। माँ कालीक कृपा सं खौआरे परिवार मे सर्वदा सुख, शांति, समृद्धि आ भ्रातृभाव बनल रहय।
+            </p>
+            <div class="pt-2 text-stone-500 text-[11px]">
+                ।। जय माँ काली ।। सर्वाधिकार सुरक्षित २०२६ ।।
+            </div>
+        </div>
+    </footer>
+
+    <!-- Direct Gallery Upload / Admin Modal (With Tab Switcher) -->
+    <div id="adminModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="card-dark rounded-2xl max-w-md w-full overflow-hidden border border-amber-400/50 shadow-2xl">
+            <!-- Header -->
+            <div class="header-bg p-4 flex items-center justify-between border-b border-amber-500/30">
+                <div class="flex items-center gap-2 text-amber-300">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3 class="font-bold text-sm font-devanagari">पूजा समिति एडमिन पोर्टल</h3>
+                </div>
+                <button onclick="closeAdminModal()" class="text-stone-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-base"></i>
+                </button>
+            </div>
+
+            <!-- Step 1: PIN Verification (PIN is 100% hidden) -->
+            <div id="adminPinStep" class="p-6 text-center text-xs">
+                <div class="w-12 h-12 rounded-full bg-amber-500/20 text-amber-300 mx-auto flex items-center justify-center text-lg mb-3 border border-amber-500/40">
+                    <i class="fa-solid fa-key"></i>
+                </div>
+                <h4 class="font-bold text-amber-200 text-sm mb-1">सुरक्षा पिन दर्ज करू</h4>
+                <p class="text-stone-400 mb-4">केवल अधिकृत व्यवस्थापक सदस्य लेल</p>
+                
+                <input type="password" id="adminPinInput" maxlength="6" placeholder="गुप्त पिन लिखू" class="w-full text-center tracking-widest text-base font-mono py-2.5 px-4 rounded-xl bg-black/60 border border-stone-700 text-amber-200 mb-2 focus:outline-none focus:border-amber-400">
+                <p id="pinError" class="text-rose-400 mb-3 hidden">गलत पिन! कृपया अधिकृत पिन दर्ज करू।</p>
+                
+                <button onclick="verifyAdminPin()" class="w-full py-2.5 bg-amber-600 hover:bg-amber-500 text-stone-950 rounded-xl font-bold transition">
+                    लॉगिन करू
+                </button>
+            </div>
+
+            <!-- Step 2: Admin Dashboard with Tabs (Upload, 1-by-1 Delete, Change PIN) -->
+            <div id="adminPanelStep" class="p-6 hidden text-left text-xs">
+                <div class="flex items-center justify-between border-b border-stone-800 pb-2 mb-3">
+                    <span class="font-bold text-emerald-400 flex items-center gap-1">
+                        <i class="fa-solid fa-circle-check"></i> एडमिन सत्यापित
+                    </span>
+                    <button onclick="logoutAdmin()" class="text-stone-400 hover:text-stone-200">लॉगआउट</button>
+                </div>
+
+                <!-- Admin Tabs -->
+                <div class="flex items-center gap-1 bg-black/60 p-1 rounded-lg border border-stone-800 mb-4 text-[11px]">
+                    <button onclick="switchAdminTab('upload')" id="atab-upload" class="flex-1 py-1 px-2 rounded bg-amber-500 text-stone-950 font-bold transition">फोटो अपलोड</button>
+                    <button onclick="switchAdminTab('manage-photos')" id="atab-manage-photos" class="flex-1 py-1 px-2 rounded text-stone-300 hover:text-white transition">फोटो प्रबंधन</button>
+                    <button onclick="switchAdminTab('manage-members')" id="atab-manage-members" class="flex-1 py-1 px-2 rounded text-stone-300 hover:text-white transition">सदस्य प्रबंधन (Delete)</button>
+                    <button onclick="switchAdminTab('change-pin')" id="atab-change-pin" class="flex-1 py-1 px-2 rounded text-stone-300 hover:text-white transition">पिन बदलू</button>
+                </div>
+
+                <!-- Tab 1: Upload Photo -->
+                <div id="adminTabContent-upload" class="space-y-3.5">
+                    <div>
+                        <label class="block font-semibold text-amber-200 mb-1">१. फोटो केर वर्ष चुनु:</label>
+                        <select id="uploadYear" class="w-full p-2.5 rounded-lg bg-black/60 border border-stone-700 text-amber-100">
+                            <option value="2026">२०२६ (चालू वर्ष)</option>
+                            <option value="2025">२०२५</option>
+                            <option value="2024">२०२४</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-semibold text-amber-200 mb-1">२. फोटो शीर्षक / विवरण:</label>
+                        <input type="text" id="uploadTitle" placeholder="उदा. माँ काली प्रतिमा दर्शन, महाआरती..." class="w-full p-2.5 rounded-lg bg-black/60 border border-stone-700 text-amber-100 placeholder-stone-500">
+                    </div>
+
+                    <div>
+                        <label class="block font-semibold text-amber-200 mb-1">३. मोबाइल / कंप्यूटर गैलरी सं फोटो चुनु:</label>
+                        <input type="file" id="imageFileInput" accept="image/*" class="w-full p-2 rounded-lg bg-black/60 border border-dashed border-amber-500/40 text-stone-300 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-amber-500 file:text-stone-950 hover:file:bg-amber-400 cursor-pointer">
+                        <p class="text-[10px] text-emerald-400 mt-1">✓ Google Firebase Realtime Cloud सं सिंक होयत।</p>
+                    </div>
+
+                    <button onclick="uploadCompressedImage()" id="uploadBtn" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <span>अपलोड क' क' गैलरी मे जोड़ू</span>
+                    </button>
+                    <div id="uploadLoader" class="hidden text-center text-amber-300 text-xs py-1">
+                        <i class="fa-solid fa-circle-notch fa-spin mr-1"></i> अपलोड भ' रहल अछि, कृपया प्रतीक्षा करू...
+                    </div>
+                </div>
+
+                <!-- Tab 2: Manage Photos (Delete 1 by 1) -->
+                <div id="adminTabContent-manage-photos" class="hidden space-y-2">
+                    <p class="text-stone-400 text-[11px] mb-2">जे फोटो हटाबय चाहैत छी, ओकर सोझाँ डिलीट बटन दबाउ:</p>
+                    <div id="adminPhotoList" class="max-h-56 overflow-y-auto space-y-2 pr-1">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Tab 3: Manage Members / Delete Entry -->
+                <div id="adminTabContent-manage-members" class="hidden space-y-2">
+                    <p class="text-stone-400 text-[11px] mb-2">जे सदस्य/सहयोग प्रविष्टि हटाबय चाहैत छी, ओकर सोझाँ डिलीट दबाउ:</p>
+                    
+                    <!-- Year Filter inside Admin Member Delete Tab -->
+                    <div class="flex items-center gap-1 bg-black/60 p-1 rounded-lg border border-stone-800 text-[11px] mb-2">
+                        <span class="text-stone-400 text-[10px] px-1">वर्ष:</span>
+                        <button onclick="setAdminMemberYearFilter('all')" id="am-yr-all" class="px-2 py-0.5 rounded text-stone-300 hover:text-white transition">समस्त</button>
+                        <button onclick="setAdminMemberYearFilter('2026')" id="am-yr-2026" class="px-2 py-0.5 rounded bg-amber-500 text-stone-950 font-bold transition">२०२६</button>
+                        <button onclick="setAdminMemberYearFilter('2025')" id="am-yr-2025" class="px-2 py-0.5 rounded text-stone-300 hover:text-white transition">२०२५</button>
+                        <button onclick="setAdminMemberYearFilter('2024')" id="am-yr-2024" class="px-2 py-0.5 rounded text-stone-300 hover:text-white transition">२०२४</button>
+                    </div>
+
+                    <div class="mb-2">
+                        <input type="text" id="adminMemberSearchInput" oninput="populateAdminMemberList()" placeholder="नाम अथवा राशि सं खोजू..." class="w-full py-1.5 px-3 rounded-lg bg-black/60 border border-stone-700 text-amber-100 placeholder-stone-500 text-xs">
+                    </div>
+                    <div id="adminMemberList" class="max-h-56 overflow-y-auto space-y-1.5 pr-1">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Tab 4: Change PIN -->
+                <div id="adminTabContent-change-pin" class="hidden space-y-3">
+                    <div>
+                        <label class="block font-semibold text-amber-200 mb-1">नव गुप्त पिन (New PIN):</label>
+                        <input type="password" id="newAdminPin" maxlength="6" placeholder="नया 4-6 अंकों का पिन" class="w-full p-2.5 rounded-lg bg-black/60 border border-stone-700 text-amber-100">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-amber-200 mb-1">नव पिन पुष्टि करू:</label>
+                        <input type="password" id="confirmAdminPin" maxlength="6" placeholder="पुनः वही पिन दर्ज करें" class="w-full p-2.5 rounded-lg bg-black/60 border border-stone-700 text-amber-100">
+                    </div>
+                    <button onclick="saveNewAdminPin()" class="w-full py-2.5 bg-amber-600 hover:bg-amber-500 text-stone-950 rounded-xl font-bold transition">
+                        पिन सुरक्षित करू
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vanshavali Fullscreen Modal -->
+    <div id="vanshavaliModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="card-dark rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col overflow-hidden border border-amber-400/50 shadow-2xl">
+            <div class="header-bg p-4 flex items-center justify-between border-b border-amber-500/30">
+                <h3 class="font-bold text-amber-200 text-sm font-devanagari">झा परिवार की वंशावली – प्रामाणिक ऐतिहासिक दस्तावेज़</h3>
+                <button onclick="closeVanshavaliModal()" class="text-stone-400 hover:text-white text-base">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto text-xs text-stone-300 space-y-4 font-mono leading-relaxed" id="vanshavaliModalText">
+                <p class="text-amber-300 font-bold text-center text-sm font-devanagari">झा परिवार की वंशावली</p>
+                <p class="text-center italic text-stone-400">यह दस्तावेज़ श्री जटाशंकर झा द्वारा प्रदान की गई जानकारी पर आधारित है।</p>
+                <p class="text-center font-bold text-amber-200">मूल पूर्वज (पर-पितामह की पीढ़ी): तीन भाई देवी झा, बंसी झा, और रुद्रमणि झा।</p>
+                <hr class="border-stone-800">
+                <div>
+                    <p class="text-amber-400 font-bold">1. देवी झा की शाखा</p>
+                    <p>अयोध्या झा (पुत्र)</p>
+                    <p class="pl-4">सत्यनारायण झा (पौत्र)</p>
+                    <p class="pl-8">महेश कांत झा (परपौत्र)</p>
+                    <p class="pl-8">श्यामा कांत झा (परपौत्र)</p>
+                    <p>टुनकू झा (पुत्र- परिवार में हरे राम, ननकू आदि शामिल)</p>
+                </div>
+                <div>
+                    <p class="text-amber-400 font-bold">2. बंसी झा की शाखा</p>
+                    <p>दुखहरण झा (पुत्र)</p>
+                    <p class="pl-4">दत्त नारायण झा (दर्पनारायण) (पौत्र)</p>
+                    <p class="pl-8">मुरारी झा (परपौत्र)</p>
+                    <p class="pl-8">हकरू (परपौत्र)</p>
+                </div>
+                <div>
+                    <p class="text-amber-400 font-bold">3. रुद्रमणि झा की शाखा</p>
+                    <p class="italic text-stone-400">रुद्रमणि झा के चार पुत्र (जटाशंकर झा के चार पितामह) और उनके वंशजों का विवरण:</p>
+                    <div class="mt-2 space-y-1">
+                        <p class="text-amber-200 font-semibold">A. बबुए झा (प्रथम पितामह - जटाशंकर झा के दादा)</p>
+                        <p class="pl-4">नेवा लाल झा (पुत्र) | पुत्र: काली कांत</p>
+                        <p class="pl-4">मधु कांत झा (पुत्र) | पुत्र: रवि बाबू</p>
+                        <p class="pl-4">भोली झा (पुत्र) | पुत्र: जटाशंकर झा</p>
+                        <p class="pl-4">राज कांत झा (पुत्र) | नोट: ये धनौजा चले गए थे।</p>
+                    </div>
+                    <div class="mt-2 space-y-1">
+                        <p class="text-amber-200 font-semibold">B. दूसरे पितामह के वंशज</p>
+                        <p class="pl-4">| कपिलेश्वर झा पुत्र: प्रताप बाबू</p>
+                        <p class="pl-4">| उमाकांत झा पुत्र: नरसिंह</p>
+                        <p class="pl-4">| जुगेश्वर झा पुत्र: लंबोदर और दामोदर</p>
+                        <p class="pl-4">| विशेश्वर झा (केवल दो पुत्रियाँ)</p>
+                        <p class="pl-4">| कुशेश्वर झा पुत्र: कुमार झा</p>
+                    </div>
+                    <div class="mt-2 space-y-1">
+                        <p class="text-amber-200 font-semibold">C. नचारी झा (तीसरे पितामह)</p>
+                        <p class="pl-4">शोभाकांत झा (पुत्र) | संतान: एक पुत्री</p>
+                        <p class="pl-4">राधाकांत झा (पुत्र) | पुत्र: प्रेमचंद, प्रफुल्ल आदि</p>
+                        <p class="pl-4">वैद्यनाथ बाबू (पुत्र) | पुत्र: बड़े गणेश बाबू</p>
+                        <p class="pl-4">जयनाथ बाबू (मास्टर साहब) (पुत्र) | पुत्र: नरेश कांत, नारायण, प्रभु कांत</p>
+                    </div>
+                    <div class="mt-2 space-y-1">
+                        <p class="text-amber-200 font-semibold">D. उपाध्याय झा (चौथे पितामह)</p>
+                        <p class="pl-4">| चक्रधर झा (पुत्र)</p>
+                        <p class="pl-4">श्रीधर झा (पुत्र) | पुत्र: देवा बाबू</p>
+                        <p class="pl-4">चित्रधर (कुला बाबू) (पुत्र) | पुत्र: वेदा बाबू</p>
+                        <p class="pl-4">| शशिधर झा (पुत्र- कोई संतान नहीं)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 bg-black/60 border-t border-stone-800 text-center">
+                <button onclick="copyVanshavaliText()" class="px-4 py-1.5 bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold rounded-lg text-xs">
+                    संपूर्ण वंशावली कॉपी करें
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="imageLightboxModal" class="fixed inset-0 bg-black/95 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <button onclick="closeImageLightbox()" class="absolute top-4 right-4 text-white text-2xl hover:text-amber-400 z-50">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl max-h-[90vh] flex flex-col items-center">
+            <img id="lightboxImg" src="" alt="Zoomed" class="max-h-[80vh] w-auto object-contain rounded-xl border border-amber-400/40 shadow-2xl">
+            <p id="lightboxCaption" class="mt-3 text-amber-200 font-bold text-sm text-center font-devanagari"></p>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-stone-900 text-amber-200 text-xs px-4 py-2.5 rounded-xl shadow-2xl border border-amber-500/40 transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+        <span id="toastMsg">सफलतापूर्वक कॉपी भ' गेल!</span>
+    </div>
+
+    <!-- JavaScript Data and Interactive Logic -->
+    <script>
+        // Convert English digits to authentic Devanagari numerals
+        function toDevanagariDigits(num) {
+            if (num === null || num === undefined) return '';
+            const devMap = { '0': '०', '1': '१', '2': '२', '3': '३', '4': '४', '5': '५', '6': '६', '7': '७', '8': '८', '9': '९' };
+            return String(num).replace(/[0-9]/g, d => devMap[d]);
+        }
+
+        function formatIndianCurrencyDevanagari(amount) {
+            const formattedEn = Number(amount).toLocaleString('en-IN');
+            return '₹ ' + toDevanagariDigits(formattedEn);
+        }
+
+        // Global error handler for broken gallery images
+        window.handleImageError = function(imgEl) {
+            if (!imgEl) return;
+            const card = imgEl.closest('.gallery-card');
+            if (card) {
+                card.style.display = 'none';
+            }
+        };
+
+        // Initialize Firebase with your provided configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyA39zP_XOlMfJIgkrSyUKKHOTHlvZ9UZNQ",
+            authDomain: "durgouli-kali-puja.firebaseapp.com",
+            projectId: "durgouli-kali-puja",
+            storageBucket: "durgouli-kali-puja.firebasestorage.app",
+            messagingSenderId: "739882456708",
+            appId: "1:739882456708:web:d168ed590225e0e82694d1",
+            measurementId: "G-LH0BDNK4FJ"
+        };
+
+        let db = null;
+        try {
+            if (firebase.apps.length === 0) {
+                firebase.initializeApp(firebaseConfig);
+            }
+            db = firebase.firestore();
+        } catch(err) {
+            console.warn("Firebase initialization fallback: ", err);
+        }
+
+        // Exact 79 Contributors Data
+        const contributors = [
+            { id: 1, name: "श्री प्रभु कांत झा", amount: 21001, purpose: "प्रतिमा वास्ते" },
+            { id: 2, name: "श्रीमती स्वाति झा", amount: 15555, purpose: "हवन वास्ते" },
+            { id: 3, name: "थ्री डॉट्स लाइफ साइंस प्रा. लि.", amount: 12501, purpose: "" },
+            { id: 4, name: "श्री वीरेन्द्र झा", amount: 12345, purpose: "" },
+            { id: 5, name: "श्री अरविंद कुमार झा", amount: 11001, purpose: "" },
+            { id: 6, name: "श्री अश्वनी कुमार झा", amount: 11000, purpose: "" },
+            { id: 7, name: "प्रो. अजय कुमार झा", amount: 10001, purpose: "" },
+            { id: 8, name: "श्री संजय कुमार झा (हरेराम काका)", amount: 10001, purpose: "" },
+            { id: 9, name: "श्रीमती ऋचा मिश्रा (झुना)", amount: 9500, purpose: "" },
+            { id: 10, name: "श्री कमलेश कुमार झा", amount: 6101, purpose: "" },
+            { id: 11, name: "श्री कुणाल कश्यप", amount: 5501, purpose: "" },
+            { id: 12, name: "श्रीमती रीता झा (सीतामढ़ी)", amount: 5501, purpose: "" },
+            { id: 13, name: "श्री दुश्यंत कश्यप (मोंटी)", amount: 5501, purpose: "" },
+            { id: 14, name: "श्री मनोज कुमार झा", amount: 5101, purpose: "" },
+            { id: 15, name: "श्री अमर कुमार झा (शम्भू काका)", amount: 5101, purpose: "" },
+            { id: 16, name: "श्री अजीत कुमार झा (छोटू काका)", amount: 5101, purpose: "" },
+            { id: 17, name: "श्री द्रवेश कुमार झा", amount: 5101, purpose: "" },
+            { id: 18, name: "श्री अशोक कुमार झा", amount: 5001, purpose: "" },
+            { id: 19, name: "श्रीमती टीना", amount: 5001, purpose: "" },
+            { id: 20, name: "श्रीमती शिप्रा झा", amount: 5001, purpose: "" },
+            { id: 21, name: "श्रीमती शाखा झा", amount: 5001, purpose: "" },
+            { id: 22, name: "श्री अखिलेश कुमार झा", amount: 5001, purpose: "" },
+            { id: 23, name: "श्री अतुल कश्यप", amount: 5001, purpose: "" },
+            { id: 24, name: "श्री अंकित झा", amount: 5001, purpose: "" },
+            { id: 25, name: "श्री अंकुर झा", amount: 5001, purpose: "" },
+            { id: 26, name: "श्री बिनम्र कश्यप", amount: 5001, purpose: "" },
+            { id: 27, name: "श्रीमती पुष्पा चौधरी", amount: 5000, purpose: "" },
+            { id: 28, name: "श्री अवनीश कुमार झा", amount: 3501, purpose: "" },
+            { id: 29, name: "श्रीमती बबीता झा", amount: 3101, purpose: "" },
+            { id: 30, name: "श्री संजीव कुमार झा (टिंकू काका)", amount: 3001, purpose: "" },
+            { id: 31, name: "डॉ. रजनीश कश्यप", amount: 2751, purpose: "" },
+            { id: 32, name: "श्री आशीष कश्यप", amount: 2751, purpose: "" },
+            { id: 33, name: "प्रो. बिनय कुमार झा", amount: 2501, purpose: "" },
+            { id: 34, name: "प्रो. ज्योति झा", amount: 2501, purpose: "" },
+            { id: 35, name: "श्रीमती चित्रा", amount: 2501, purpose: "" },
+            { id: 36, name: "श्री आदर्श विनय", amount: 2501, purpose: "" },
+            { id: 37, name: "श्रीमती कुंतल", amount: 2501, purpose: "" },
+            { id: 38, name: "श्रीमती मीरा झा", amount: 2501, purpose: "" },
+            { id: 39, name: "श्री आलोक कुमार", amount: 2501, purpose: "" },
+            { id: 40, name: "श्रीमती प्रियंका झा", amount: 2501, purpose: "" },
+            { id: 41, name: "श्री राजेश झा", amount: 2501, purpose: "" },
+            { id: 42, name: "श्रीमती निशा झा", amount: 2501, purpose: "" },
+            { id: 43, name: "श्रीमती अर्चना झा", amount: 2501, purpose: "" },
+            { id: 44, name: "गौरव ठाकुर", amount: 2501, purpose: "" },
+            { id: 45, name: "श्री बसंत कुमार झा", amount: 2105, purpose: "" },
+            { id: 46, name: "सुश्री श्वेतलाना झा", amount: 2101, purpose: "" },
+            { id: 47, name: "श्री मुकेश कुमार झा (लड्डू)", amount: 2101, purpose: "" },
+            { id: 48, name: "सुश्री अपूर्वा झा", amount: 2100, purpose: "" },
+            { id: 49, name: "श्रीमती कल्याणी झा", amount: 2100, purpose: "" },
+            { id: 50, name: "श्री सत्यम झा", amount: 2001, purpose: "" },
+            { id: 51, name: "श्रीमती श्रेयता झा पूजा", amount: 1501, purpose: "" },
+            { id: 52, name: "श्री नितीश कुमार कश्यप", amount: 1501, purpose: "" },
+            { id: 53, name: "श्रीमती सुजाता झा", amount: 1101, purpose: "" },
+            { id: 54, name: "श्री प्रत्यूष कुमार झा", amount: 1101, purpose: "" },
+            { id: 55, name: "श्री कौशल किशोर झा", amount: 1101, purpose: "" },
+            { id: 56, name: "श्री संतोष कुमार झा", amount: 1101, purpose: "" },
+            { id: 57, name: "श्री दिलीप कुमार झा", amount: 1101, purpose: "" },
+            { id: 58, name: "श्रीमती मीनू झा", amount: 1101, purpose: "" },
+            { id: 59, name: "सुश्री ललिता झा", amount: 1100, purpose: "" },
+            { id: 60, name: "सुश्री विशाखा झा", amount: 1100, purpose: "" },
+            { id: 61, name: "श्री विश्वजीत झा", amount: 1100, purpose: "" },
+            { id: 62, name: "श्री प्रियराज झा (बमबम)", amount: 1100, purpose: "" },
+            { id: 63, name: "सुश्री शुभी (शिवांगी झा)", amount: 1001, purpose: "" },
+            { id: 64, name: "श्री विशाल कुमार", amount: 505, purpose: "" },
+            { id: 65, name: "श्री शिवम झा", amount: 501, purpose: "" },
+            { id: 66, name: "सुश्री अनुराधा झा", amount: 501, purpose: "" },
+            { id: 67, name: "श्रीमती रेणु झा (देपूरा)", amount: 501, purpose: "" },
+            { id: 68, name: "श्रीमती ऋतु झा", amount: 501, purpose: "" },
+            { id: 69, name: "श्रीमती नीलम झा", amount: 501, purpose: "" },
+            { id: 70, name: "श्री बच्चू नाथ झा", amount: 501, purpose: "" },
+            { id: 71, name: "श्री बैद्यनाथ झा", amount: 251, purpose: "" },
+            { id: 72, name: "श्री गोपाल कुमार झा", amount: 251, purpose: "" },
+            { id: 73, name: "श्री जटाशंकर झा", amount: 1101, purpose: "" },
+            { id: 74, name: "श्री पशुपति झा", amount: 5101, purpose: "" },
+            { id: 75, name: "श्री रमापति झा", amount: 5101, purpose: "" },
+            { id: 76, name: "श्री अभिषेक कुमार झा", amount: 1001, purpose: "" },
+            { id: 77, name: "श्री राजू झा", amount: 501, purpose: "" },
+            { id: 78, name: "श्री किशोर कुमार झा", amount: 2500, purpose: "" },
+            { id: 79, name: "श्री अरुण कुमार झा (वकील साहिब)", amount: 5101, purpose: "" }
+        ];
+
+        // 100% Genuine Kali Puja Images
+        const authenticPhotos = [
+            { id: 101, year: "2026", title: "माँ श्यामा काली भव्य प्रतिमा दर्शन", url: "partima.jpeg" },
+            { id: 102, year: "2026", title: "निशा पूजा एवं पुरोहित वंदन", url: "WhatsApp%20Image%202026-11-09%20at%203.02.40%20AM.jpeg" },
+            { id: 103, year: "2026", title: "भगवान श्री गणेश, लक्ष्मी एवं सरस्वती", url: "WhatsApp%20Image%202026-11-09%20at%203.02.41%20AM.jpeg" },
+            { id: 104, year: "2026", title: "महापूजन एवं पारिवारिक अनुष्ठान मंडप", url: "WhatsApp%20Image%202026-11-09%20at%203.02.42%20AM.jpeg" },
+            { id: 105, year: "2026", title: "माँ काली संपूर्ण दरबार दर्शन", url: "WhatsApp%20Image%202026-11-09%20at%203.02.43%20AM.jpeg" }
+        ];
+
+        // Previous Years Historical Datasets (2025 and 2024 Archives)
+        const previousYearRecords = {
+            "2025": [
+                { id: 1, year: "2025", name: "श्री प्रभु कांत झा", amount: 21001, purpose: "प्रतिमा वास्ते" },
+                { id: 2, year: "2025", name: "श्रीमती स्वाति झा", amount: 15000, purpose: "हवन वास्ते" },
+                { id: 3, year: "2025", name: "श्री वीरेन्द्र झा", amount: 11000, purpose: "" },
+                { id: 4, year: "2025", name: "श्री अरविंद कुमार झा", amount: 11000, purpose: "" },
+                { id: 5, year: "2025", name: "श्री अश्वनी कुमार झा", amount: 11000, purpose: "" },
+                { id: 6, year: "2025", name: "प्रो. अजय कुमार झा", amount: 10000, purpose: "" },
+                { id: 7, year: "2025", name: "श्री संजय कुमार झा (हरेराम काका)", amount: 10000, purpose: "" },
+                { id: 8, year: "2025", name: "श्री कमलेश कुमार झा", amount: 5100, purpose: "" },
+                { id: 9, year: "2025", name: "श्री मनोज कुमार झा", amount: 5100, purpose: "" },
+                { id: 10, year: "2025", name: "श्री अमर कुमार झा (शम्भू काका)", amount: 5100, purpose: "" },
+                { id: 11, year: "2025", name: "श्री अजीत कुमार झा (छोटू काका)", amount: 5100, purpose: "" },
+                { id: 12, year: "2025", name: "श्री द्रवेश कुमार झा", amount: 5100, purpose: "" },
+                { id: 13, year: "2025", name: "श्री अशोक कुमार झा", amount: 5000, purpose: "" },
+                { id: 14, year: "2025", name: "श्री अखिलेश कुमार झा", amount: 5000, purpose: "" },
+                { id: 15, year: "2025", name: "श्री जटाशंकर झा", amount: 1101, purpose: "" },
+                { id: 16, year: "2025", name: "श्री पशुपति झा", amount: 5100, purpose: "" },
+                { id: 17, year: "2025", name: "श्री रमापति झा", amount: 5100, purpose: "" }
+            ],
+            "2024": [
+                { id: 1, year: "2024", name: "श्री प्रभु कांत झा", amount: 21000, purpose: "प्रतिमा वास्ते" },
+                { id: 2, year: "2024", name: "श्रीमती स्वाति झा", amount: 11000, purpose: "हवन वास्ते" },
+                { id: 3, year: "2024", name: "श्री वीरेन्द्र झा", amount: 10000, purpose: "" },
+                { id: 4, year: "2024", name: "श्री अरविंद कुमार झा", amount: 10000, purpose: "" },
+                { id: 5, year: "2024", name: "प्रो. अजय कुमार झा", amount: 10000, purpose: "" },
+                { id: 6, year: "2024", name: "श्री संजय कुमार झा (हरेराम काका)", amount: 10000, purpose: "" },
+                { id: 7, year: "2024", name: "श्री अमर कुमार झा (शम्भू काका)", amount: 5000, purpose: "" },
+                { id: 8, year: "2024", name: "श्री अजीत कुमार झा (छोटू काका)", amount: 5000, purpose: "" },
+                { id: 9, year: "2024", name: "श्री जटाशंकर झा", amount: 1001, purpose: "" },
+                { id: 10, year: "2024", name: "श्री पशुपति झा", amount: 5000, purpose: "" },
+                { id: 11, year: "2024", name: "श्री रमापति झा", amount: 5000, purpose: "" }
+            ]
+        };
+
+        let activeYear = '2026';
+        let adminMemberYearFilter = '2026';
+        let customPhotos = [];
+        let customContributors = [];
+        let currentTier = 'all';
+        let viewMode = 'table';
+        let isAdminLoggedIn = false;
+        let deletedOriginalIds = JSON.parse(localStorage.getItem('khaware_deleted_ids') || '[]');
+        let activeAdminPin = localStorage.getItem('khaware_admin_pin') || "7788";
+
+        // Switch Active Year
+        function switchActiveYear(year) {
+            activeYear = year;
+            ['2026', '2025', '2024'].forEach(y => {
+                const btn = document.getElementById('year-btn-' + y);
+                if (btn) {
+                    if (y === year) {
+                        btn.className = "px-3 py-1 rounded-md bg-amber-500 text-stone-950 font-bold transition";
+                    } else {
+                        btn.className = "px-3 py-1 rounded-md text-stone-300 hover:text-white transition";
+                    }
+                }
+            });
+
+            // Update headings & form year dropdown
+            const devanagariYears = { '2026': '२०२६', '2025': '२०२५', '2024': '२०२४' };
+            const yearStr = devanagariYears[year] || year;
+
+            const activeYearHead = document.getElementById('activeYearHeading');
+            if (activeYearHead) activeYearHead.textContent = yearStr;
+
+            const entryYearLbl = document.getElementById('entryYearLabel');
+            if (entryYearLbl) entryYearLbl.textContent = yearStr;
+
+            const selfYearSel = document.getElementById('selfYearSelect');
+            if (selfYearSel) selfYearSel.value = year;
+
+            recalculateTotals();
+            filterAndRender();
+        }
+
+        function syncEntryYearWithSelect() {
+            const chosen = document.getElementById('selfYearSelect').value;
+            const devanagariYears = { '2026': '२०२६', '2025': '२०२५', '2024': '२०२४' };
+            const entryYearLbl = document.getElementById('entryYearLabel');
+            if (entryYearLbl) entryYearLbl.textContent = devanagariYears[chosen] || chosen;
+        }
+
+        function setViewMode(mode) {
+            viewMode = mode;
+            if (mode === 'table') {
+                document.getElementById('tableViewContainer').classList.remove('hidden');
+                document.getElementById('cardsViewContainer').classList.add('hidden');
+                document.getElementById('btn-view-table').className = "px-2.5 py-1.5 rounded-md text-amber-200 font-medium flex items-center gap-1 bg-amber-500/20";
+                document.getElementById('btn-view-cards').className = "px-2.5 py-1.5 rounded-md text-stone-400 hover:text-amber-200 font-medium flex items-center gap-1";
+            } else {
+                document.getElementById('tableViewContainer').classList.add('hidden');
+                document.getElementById('cardsViewContainer').classList.remove('hidden');
+                document.getElementById('btn-view-cards').className = "px-2.5 py-1.5 rounded-md text-amber-200 font-medium flex items-center gap-1 bg-amber-500/20";
+                document.getElementById('btn-view-table').className = "px-2.5 py-1.5 rounded-md text-stone-400 hover:text-amber-200 font-medium flex items-center gap-1";
+            }
+            filterAndRender();
+        }
+
+        function setTierFilter(tier) {
+            currentTier = tier;
+            document.querySelectorAll('.tier-pill').forEach(btn => {
+                btn.className = "tier-pill px-2.5 py-1 rounded-full border bg-black/40 text-stone-300 border-stone-700 hover:border-amber-400";
+            });
+            const activeBtn = document.getElementById('btn-tier-' + tier);
+            if(activeBtn) {
+                activeBtn.className = "tier-pill px-2.5 py-1 rounded-full border bg-amber-500 text-stone-950 border-amber-500 font-bold";
+            }
+            filterAndRender();
+        }
+
+        function filterAndRender() {
+            const query = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+            const sortVal = document.getElementById('sortSelect').value;
+
+            // Fetch list based on activeYear
+            let baseList = [];
+            if (activeYear === '2026') {
+                baseList = contributors.filter(item => !deletedOriginalIds.includes(item.id)).map(i => ({ ...i, year: '2026' }));
+            } else if (previousYearRecords[activeYear]) {
+                baseList = previousYearRecords[activeYear].filter(item => !deletedOriginalIds.includes(item.id + '_' + activeYear));
+            }
+
+            // Include user-added custom contributors for the selected year
+            const yearCustomContributors = customContributors.filter(item => (item.year || '2026') === activeYear);
+            const allMembers = [...baseList, ...yearCustomContributors];
+
+            let filtered = allMembers.filter(item => {
+                const matchQuery = item.name.toLowerCase().includes(query) || 
+                                   item.amount.toString().includes(query) ||
+                                   (item.purpose && item.purpose.toLowerCase().includes(query));
+
+                let matchTier = true;
+                if(currentTier === '10k') matchTier = (item.amount >= 10000);
+                else if(currentTier === '5k') matchTier = (item.amount >= 5000 && item.amount < 10000);
+                else if(currentTier === '2k') matchTier = (item.amount >= 2000 && item.amount < 5000);
+                else if(currentTier === 'sub2k') matchTier = (item.amount < 2000);
+
+                return matchQuery && matchTier;
+            });
+
+            if(sortVal === 'high') {
+                filtered.sort((a, b) => b.amount - a.amount);
+            } else if(sortVal === 'low') {
+                filtered.sort((a, b) => a.amount - b.amount);
+            } else if(sortVal === 'name') {
+                filtered.sort((a, b) => a.name.localeCompare(b.name, 'hi'));
+            } else {
+                filtered.sort((a, b) => a.id - b.id);
+            }
+
+            renderView(filtered);
+        }
+
+        function renderView(list) {
+            const tbody = document.getElementById('contributorTableBody');
+            const cardsContainer = document.getElementById('cardsViewContainer');
+            const noResults = document.getElementById('noResults');
+            const displayCount = document.getElementById('displayCount');
+
+            if (displayCount) displayCount.textContent = toDevanagariDigits(list.length);
+            tbody.innerHTML = '';
+            cardsContainer.innerHTML = '';
+
+            if (list.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            }
+            noResults.classList.add('hidden');
+
+            list.forEach((item, index) => {
+                const formattedAmt = formatIndianCurrencyDevanagari(item.amount);
+                const devanagariId = toDevanagariDigits(item.id);
+                const purposeBadge = item.purpose ? `<span class="inline-block bg-amber-500/20 text-amber-300 border border-amber-400/40 text-[10px] font-semibold px-2 py-0.5 rounded ml-2">${item.purpose}</span>` : '';
+                
+                // Show Admin Delete Button if logged in
+                const deleteActionBtn = isAdminLoggedIn ? `
+                    <button onclick="deleteContributorEntry('${item.docId || ''}', ${item.id})" class="ml-1 text-rose-400 hover:text-rose-200 text-xs" title="प्रविष्टि डिलीट करू">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                ` : '';
+
+                // Table row
+                const tr = document.createElement('tr');
+                tr.className = (index % 2 === 0 ? 'bg-black/20' : 'bg-transparent') + ' hover:bg-amber-500/10 transition-colors';
+                tr.innerHTML = `
+                    <td class="py-3 px-3.5 text-center font-mono text-stone-400 font-semibold">${devanagariId}</td>
+                    <td class="py-3 px-3.5 font-medium text-stone-100">
+                        ${item.name}
+                        ${purposeBadge}
+                    </td>
+                    <td class="py-3 px-3.5 text-center text-xs text-stone-400 hidden sm:table-cell">
+                        ${item.purpose ? item.purpose : 'सामान्य सहयोग'}
+                    </td>
+                    <td class="py-3 px-3.5 text-right font-bold text-amber-300">${formattedAmt}</td>
+                    <td class="py-3 px-3.5 text-center">
+                        <span class="inline-flex items-center gap-1 bg-emerald-950/80 text-emerald-400 border border-emerald-500/30 text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                            <i class="fa-solid fa-check text-[9px]"></i> प्राप्त
+                        </span>
+                        ${deleteActionBtn}
+                    </td>
+                `;
+                tbody.appendChild(tr);
+
+                // Card Item
+                const card = document.createElement('div');
+                card.className = "card-dark rounded-xl p-3.5 flex flex-col justify-between";
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-stone-400 mb-1.5">
+                            <span class="font-mono">#${devanagariId}</span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-emerald-400 text-[10px]"><i class="fa-solid fa-check"></i> प्राप्त</span>
+                                ${deleteActionBtn}
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-sm text-stone-100">${item.name}</h4>
+                        ${item.purpose ? `<p class="text-[11px] text-amber-300 mt-0.5">${item.purpose}</p>` : ''}
+                    </div>
+                    <div class="mt-3 pt-2 border-t border-stone-800 flex justify-between items-center">
+                        <span class="text-[11px] text-stone-400">सहयोग राशि:</span>
+                        <span class="font-bold text-amber-300 text-sm">${formattedAmt}</span>
+                    </div>
+                `;
+                cardsContainer.appendChild(card);
+            });
+        }
+
+        // Render Gallery Photos
+        function filterGallery(year) {
+            ['all', '2026', '2025', '2024'].forEach(y => {
+                const btn = document.getElementById('gal-btn-' + y);
+                if (btn) {
+                    if (y === year) {
+                        btn.className = "px-3 py-1.5 rounded-lg bg-amber-500 text-stone-950 font-bold transition";
+                    } else {
+                        btn.className = "px-3 py-1.5 rounded-lg text-stone-300 hover:text-white transition";
+                    }
+                }
+            });
+
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = '';
+            
+            const allAvailable = [...customPhotos, ...authenticPhotos];
+            const filteredPhotos = year === 'all' ? allAvailable : allAvailable.filter(p => p.year === year);
+
+            if(filteredPhotos.length === 0) {
+                grid.innerHTML = '<div class="col-span-full py-8 text-center text-stone-400 text-xs">एहि वर्षक कोनो फोटो अखन उपलब्ध नहि अछि।</div>';
+                return;
+            }
+
+            filteredPhotos.forEach(photo => {
+                const div = document.createElement('div');
+                div.className = "gallery-card group relative rounded-xl overflow-hidden border border-amber-500/25 bg-black/40 aspect-square cursor-pointer";
+                div.onclick = function() {
+                    openImageLightbox(photo.url, photo.title + ' (' + photo.year + ')');
+                };
+                div.innerHTML = `
+                    <img src="${photo.url}" alt="${photo.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="handleImageError(this)">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-end text-white">
+                        <span class="text-[10px] bg-amber-500 text-stone-950 font-bold px-1.5 py-0.5 rounded self-start mb-1">${photo.year}</span>
+                        <p class="text-xs font-semibold text-amber-200">${photo.title}</p>
+                    </div>
+                `;
+                grid.appendChild(div);
+            });
+        }
+
+        // Lightbox Functions
+        function openImageLightbox(src, caption) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightboxCaption').textContent = caption;
+            document.getElementById('imageLightboxModal').classList.remove('hidden');
+        }
+
+        function closeImageLightbox() {
+            document.getElementById('imageLightboxModal').classList.add('hidden');
+        }
+
+        // Self-Add Contribution Entry Handler (Directly syncs with Firebase Firestore)
+        function submitSelfEntry() {
+            const name = (document.getElementById('selfName').value || '').trim();
+            const amount = parseInt(document.getElementById('selfAmount').value, 10);
+            const purpose = (document.getElementById('selfPurpose').value || '').trim();
+            const chosenYear = document.getElementById('selfYearSelect') ? document.getElementById('selfYearSelect').value : activeYear;
+
+            if (!name) {
+                alert("कृपया सहयोगकर्ताक नाम लिखू।");
+                return;
+            }
+            if (isNaN(amount) || amount <= 0) {
+                alert("कृपया वैध सहयोग राशि लिखू।");
+                return;
+            }
+
+            // Calculate new ID for chosen year
+            let yearBaseList = [];
+            if (chosenYear === '2026') {
+                yearBaseList = contributors;
+            } else if (previousYearRecords[chosenYear]) {
+                yearBaseList = previousYearRecords[chosenYear];
+            }
+            const existingYearCustom = customContributors.filter(item => (item.year || '2026') === chosenYear);
+            const newId = yearBaseList.length + existingYearCustom.length + 1;
+            const newDocId = 'contrib_' + chosenYear + '_' + Date.now();
+
+            const newEntry = {
+                id: newId,
+                docId: newDocId,
+                year: chosenYear,
+                name: name,
+                amount: amount,
+                purpose: purpose,
+                createdAt: Date.now()
+            };
+
+            const finalizeEntry = function() {
+                customContributors.push(newEntry);
+                try {
+                    localStorage.setItem('khaware_custom_contribs', JSON.stringify(customContributors));
+                } catch(e) {}
+
+                document.getElementById('selfName').value = '';
+                document.getElementById('selfAmount').value = '';
+                document.getElementById('selfPurpose').value = '';
+
+                // If user added for different year, switch to that year so they immediately see it
+                if (activeYear !== chosenYear) {
+                    switchActiveYear(chosenYear);
+                } else {
+                    recalculateTotals();
+                    filterAndRender();
+                }
+                showToast("सहयोग राशि प्रविष्टि (" + chosenYear + ") सफलतापूर्वक जोड़ल गेल!");
+            };
+
+            if (db) {
+                db.collection("contributions").doc(newDocId).set(newEntry)
+                    .then(function() {
+                        finalizeEntry();
+                    })
+                    .catch(function(err) {
+                        console.error("Firebase contribution error:", err);
+                        finalizeEntry();
+                    });
+            } else {
+                finalizeEntry();
+            }
+        }
+
+        // Recalculate Total and Counter dynamically for activeYear
+        function recalculateTotals() {
+            let baseList = [];
+            if (activeYear === '2026') {
+                baseList = contributors.filter(item => !deletedOriginalIds.includes(item.id));
+            } else if (previousYearRecords[activeYear]) {
+                baseList = previousYearRecords[activeYear].filter(item => !deletedOriginalIds.includes(item.id + '_' + activeYear));
+            }
+
+            const yearCustomContributors = customContributors.filter(item => (item.year || '2026') === activeYear);
+            const allMembers = [...baseList, ...yearCustomContributors];
+            const totalAmt = allMembers.reduce((sum, item) => sum + item.amount, 0);
+            
+            // Format in Devanagari numerals: ₹ ३,०५,४७६ / ८०
+            const formattedDevanagariAmt = formatIndianCurrencyDevanagari(totalAmt);
+            const formattedDevanagariMembers = toDevanagariDigits(allMembers.length);
+
+            const statTotalEl = document.getElementById('stat-total-amount');
+            if (statTotalEl && activeYear === '2026') statTotalEl.textContent = formattedDevanagariAmt;
+
+            const statMembersEl = document.getElementById('stat-total-members');
+            if (statMembersEl && activeYear === '2026') statMembersEl.textContent = formattedDevanagariMembers;
+
+            const tableTotalEl = document.getElementById('tableTotalAmount');
+            if (tableTotalEl) tableTotalEl.textContent = formattedDevanagariAmt + '/-';
+        }
+
+        // Year Filter for Admin Member Deletion Tab
+        function setAdminMemberYearFilter(yr) {
+            adminMemberYearFilter = yr;
+            ['all', '2026', '2025', '2024'].forEach(y => {
+                const btn = document.getElementById('am-yr-' + y);
+                if (btn) {
+                    if (y === yr) {
+                        btn.className = "px-2 py-0.5 rounded bg-amber-500 text-stone-950 font-bold transition";
+                    } else {
+                        btn.className = "px-2 py-0.5 rounded text-stone-300 hover:text-white transition";
+                    }
+                }
+            });
+            populateAdminMemberList();
+        }
+
+        // Admin Member List for 1-by-1 Deletion Tab
+        function populateAdminMemberList() {
+            const listContainer = document.getElementById('adminMemberList');
+            if (!listContainer) return;
+            listContainer.innerHTML = '';
+
+            const q = (document.getElementById('adminMemberSearchInput')?.value || '').trim().toLowerCase();
+            
+            // Aggregate records based on adminMemberYearFilter
+            let allMembersToManage = [];
+            const yearsToInclude = adminMemberYearFilter === 'all' ? ['2026', '2025', '2024'] : [adminMemberYearFilter];
+
+            yearsToInclude.forEach(yr => {
+                let base = [];
+                if (yr === '2026') {
+                    base = contributors.filter(item => !deletedOriginalIds.includes(item.id)).map(i => ({ ...i, year: '2026' }));
+                } else if (previousYearRecords[yr]) {
+                    base = previousYearRecords[yr].filter(item => !deletedOriginalIds.includes(item.id + '_' + yr)).map(i => ({ ...i, year: yr }));
+                }
+                const customYr = customContributors.filter(item => (item.year || '2026') === yr);
+                allMembersToManage.push(...base, ...customYr);
+            });
+
+            const filteredList = allMembersToManage.filter(m => 
+                m.name.toLowerCase().includes(q) || 
+                m.amount.toString().includes(q) || 
+                toDevanagariDigits(m.amount).includes(q)
+            );
+
+            if (filteredList.length === 0) {
+                listContainer.innerHTML = '<p class="text-stone-400 text-center py-4 text-xs">कोनो सदस्य नहि भेटल।</p>';
+                return;
+            }
+
+            filteredList.forEach(item => {
+                const row = document.createElement('div');
+                row.className = "flex items-center justify-between p-2 rounded-lg bg-black/60 border border-stone-800 text-xs";
+                const devAmount = formatIndianCurrencyDevanagari(item.amount);
+                const devYear = toDevanagariDigits(item.year || '2026');
+
+                row.innerHTML = `
+                    <div class="truncate mr-2">
+                        <span class="font-bold text-amber-200">${item.name}</span>
+                        <span class="text-amber-400 text-[11px] ml-1.5 font-semibold">${devAmount}</span>
+                        <span class="text-[10px] text-stone-400 ml-1">(${devYear})</span>
+                    </div>
+                    <button onclick="deleteContributorEntry('${item.docId || ''}', ${item.id})" class="px-2 py-1 bg-rose-900/60 hover:bg-rose-700 text-rose-200 rounded text-[10px] font-semibold border border-rose-500/40 shrink-0">
+                        <i class="fa-solid fa-trash-can"></i> डिलीट
+                    </button>
+                `;
+                listContainer.appendChild(row);
+            });
+        }
+
+        // Vanshavali Branch Filter
+        function filterVanshavaliBranch(branchKey) {
+            ['all', 'devi', 'bansi', 'rudra'].forEach(k => {
+                const btn = document.getElementById('vbranch-btn-' + k);
+                if (btn) {
+                    if (k === branchKey) {
+                        btn.className = "px-2.5 py-1 rounded-full bg-amber-500 text-stone-950 font-bold border border-amber-500";
+                    } else {
+                        btn.className = "px-2.5 py-1 rounded-full bg-black/40 text-stone-300 border border-stone-700 hover:border-amber-400";
+                    }
+                }
+            });
+
+            const blocks = document.querySelectorAll('.vanshavali-block');
+            blocks.forEach(block => {
+                const b = block.getAttribute('data-branch');
+                if (branchKey === 'all' || b === branchKey) {
+                    block.classList.remove('hidden');
+                } else {
+                    block.classList.add('hidden');
+                }
+            });
+        }
+
+        // Vanshavali Search by Name Filter
+        function searchInVanshavali() {
+            const query = (document.getElementById('vanshavaliSearch')?.value || '').trim().toLowerCase();
+            const blocks = document.querySelectorAll('.vanshavali-block');
+
+            if (!query) {
+                // If search query is empty, respect active branch filter
+                blocks.forEach(block => block.classList.remove('hidden'));
+                return;
+            }
+
+            blocks.forEach(block => {
+                const text = block.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    block.classList.remove('hidden');
+                    // Highlight matching boxes
+                    const boxes = block.querySelectorAll('.ancestor-box');
+                    boxes.forEach(box => {
+                        if (box.textContent.toLowerCase().includes(query)) {
+                            box.style.borderColor = 'rgba(234, 179, 8, 0.85)';
+                            box.style.backgroundColor = 'rgba(60, 5, 15, 0.95)';
+                        } else {
+                            box.style.borderColor = 'rgba(234, 179, 8, 0.2)';
+                            box.style.backgroundColor = 'rgba(20, 1, 5, 0.9)';
+                        }
+                    });
+                } else {
+                    block.classList.add('hidden');
+                }
+            });
+        }
+
+        // Admin Modal Controls
+        function openAdminModal() {
+            document.getElementById('adminModal').classList.remove('hidden');
+            if (!isAdminLoggedIn) {
+                document.getElementById('adminPinStep').classList.remove('hidden');
+                document.getElementById('adminPanelStep').classList.add('hidden');
+                document.getElementById('adminPinInput').value = '';
+                document.getElementById('pinError').classList.add('hidden');
+            } else {
+                document.getElementById('adminPinStep').classList.add('hidden');
+                document.getElementById('adminPanelStep').classList.remove('hidden');
+                switchAdminTab('upload');
+            }
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.add('hidden');
+        }
+
+        // Auto-Compress and Upload Photo (Firebase + Local Storage sync)
+        function uploadCompressedImage() {
+            const year = document.getElementById('uploadYear').value;
+            const title = (document.getElementById('uploadTitle').value || '').trim() || 'काली पूजा संस्मरण';
+            const fileInput = document.getElementById('imageFileInput');
+            const uploadBtn = document.getElementById('uploadBtn');
+            const loader = document.getElementById('uploadLoader');
+
+            if (!fileInput.files || fileInput.files.length === 0) {
+                alert('कृपया गैलरी सं एकटा फोटो चुनु।');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            uploadBtn.classList.add('hidden');
+            loader.classList.remove('hidden');
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    let width = img.width;
+                    let height = img.height;
+                    const maxDim = 1200;
+
+                    if (width > height && width > maxDim) {
+                        height *= maxDim / width;
+                        width = maxDim;
+                    } else if (height > maxDim) {
+                        width *= maxDim / height;
+                        height = maxDim;
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    const compressedBase64 = canvas.toDataURL('image/jpeg', 0.82);
+                    const photoId = 'photo_' + Date.now();
+                    const newPhotoItem = {
+                        id: photoId,
+                        year: year,
+                        title: title,
+                        url: compressedBase64,
+                        createdAt: Date.now()
+                    };
+
+                    const finalizeUpload = function() {
+                        customPhotos.unshift(newPhotoItem);
+                        try {
+                            localStorage.setItem('khaware_custom_photos', JSON.stringify(customPhotos));
+                        } catch(err) {}
+
+                        filterGallery('all');
+                        uploadBtn.classList.remove('hidden');
+                        loader.classList.add('hidden');
+                        closeAdminModal();
+                        showToast("फोटो सफलतापूर्वक अपलोड भ' गेल!");
+
+                        document.getElementById('uploadTitle').value = '';
+                        fileInput.value = '';
+                    };
+
+                    if (db) {
+                        db.collection("gallery_photos").doc(photoId).set(newPhotoItem)
+                            .then(function() {
+                                finalizeUpload();
+                            })
+                            .catch(function(err) {
+                                console.error("Firebase photo upload error:", err);
+                                finalizeUpload();
+                            });
+                    } else {
+                        finalizeUpload();
+                    }
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Populate Photos for 1-by-1 Deletion Tab
+        function populateAdminPhotoManager() {
+            const listContainer = document.getElementById('adminPhotoList');
+            if (!listContainer) return;
+            listContainer.innerHTML = '';
+
+            if (customPhotos.length === 0) {
+                listContainer.innerHTML = '<p class="text-stone-400 text-center py-4 text-xs">कोनो नव अपलोड कयल फोटो नहि भेटल।</p>';
+                return;
+            }
+
+            customPhotos.forEach(photo => {
+                const row = document.createElement('div');
+                row.className = "flex items-center justify-between p-2 rounded-lg bg-black/60 border border-stone-800 text-xs";
+                
+                const leftDiv = document.createElement('div');
+                leftDiv.className = "flex items-center gap-2 truncate mr-2";
+                
+                const thumb = document.createElement('img');
+                thumb.src = photo.url;
+                thumb.className = "w-8 h-8 rounded object-cover border border-amber-500/30 shrink-0";
+                
+                const titleSpan = document.createElement('span');
+                titleSpan.className = "text-amber-200 font-semibold truncate";
+                titleSpan.textContent = photo.title + ' (' + photo.year + ')';
+                
+                leftDiv.appendChild(thumb);
+                leftDiv.appendChild(titleSpan);
+
+                const delBtn = document.createElement('button');
+                delBtn.className = "px-2.5 py-1 bg-rose-900/70 hover:bg-rose-700 text-rose-200 rounded text-[11px] font-semibold border border-rose-500/40 shrink-0 flex items-center gap-1";
+                delBtn.innerHTML = '<i class="fa-solid fa-trash-can"></i> डिलीट';
+                delBtn.onclick = function() {
+                    deleteSinglePhoto(photo.id);
+                };
+
+                row.appendChild(leftDiv);
+                row.appendChild(delBtn);
+                listContainer.appendChild(row);
+            });
+        }
+
+        // Delete Single Photo from Firebase and local state
+        function deleteSinglePhoto(photoId) {
+            if (!confirm("की अहाँ ई फोटो स्थायी रूप सं डिलीट करबाक चाहैत छी?")) return;
+
+            const finishPhotoDeletion = function() {
+                customPhotos = customPhotos.filter(p => p.id !== photoId);
+                try {
+                    localStorage.setItem('khaware_custom_photos', JSON.stringify(customPhotos));
+                } catch(e) {}
+
+                filterGallery('all');
+                populateAdminPhotoManager();
+                showToast("फोटो सफलतापूर्वक डिलीट भ' गेल!");
+            };
+
+            if (db) {
+                db.collection("gallery_photos").doc(String(photoId)).delete()
+                    .then(function() {
+                        finishPhotoDeletion();
+                    })
+                    .catch(function(err) {
+                        console.error("Firebase photo deletion error:", err);
+                        finishPhotoDeletion();
+                    });
+            } else {
+                finishPhotoDeletion();
+            }
+        }
+
+        // Change Admin PIN handler
+        function saveNewAdminPin() {
+            const p1 = (document.getElementById('newAdminPin').value || '').trim();
+            const p2 = (document.getElementById('confirmAdminPin').value || '').trim();
+
+            if (!p1 || p1.length < 4) {
+                alert("पिन कम सं कम 4 अंकक होना चाही!");
+                return;
+            }
+            if (p1 !== p2) {
+                alert("दुनू पिन आपस मे मेल नहि खाइत अछि!");
+                return;
+            }
+
+            activeAdminPin = p1;
+            localStorage.setItem('khaware_admin_pin', p1);
+            document.getElementById('newAdminPin').value = '';
+            document.getElementById('confirmAdminPin').value = '';
+            showToast("एडमिन सुरक्षा पिन सफलतापूर्वक बदलि गेल!");
+            switchAdminTab('upload');
+        }
+
+        // Admin Tabs switcher
+        function switchAdminTab(tabKey) {
+            ['upload', 'manage-photos', 'manage-members', 'change-pin'].forEach(k => {
+                const btn = document.getElementById('atab-' + k);
+                const content = document.getElementById('adminTabContent-' + k);
+                if (btn && content) {
+                    if (k === tabKey) {
+                        btn.className = "flex-1 py-1 px-2 rounded bg-amber-500 text-stone-950 font-bold transition";
+                        content.classList.remove('hidden');
+                    } else {
+                        btn.className = "flex-1 py-1 px-2 rounded text-stone-300 hover:text-white transition";
+                        content.classList.add('hidden');
+                    }
+                }
+            });
+
+            if (tabKey === 'manage-photos') {
+                populateAdminPhotoManager();
+            } else if (tabKey === 'manage-members') {
+                populateAdminMemberList();
+            }
+        }
+        function verifyAdminPin() {
+            const pin = document.getElementById('adminPinInput').value;
+            if (pin === activeAdminPin) {
+                isAdminLoggedIn = true;
+                document.getElementById('adminPinStep').classList.add('hidden');
+                document.getElementById('adminPanelStep').classList.remove('hidden');
+                document.getElementById('pinError').classList.add('hidden');
+                switchAdminTab('upload');
+                filterAndRender(); // Re-render to show delete icons
+            } else {
+                document.getElementById('pinError').classList.remove('hidden');
+            }
+        }
+        function logoutAdmin() {
+            isAdminLoggedIn = false;
+            document.getElementById('adminPanelStep').classList.add('hidden');
+            document.getElementById('adminPinStep').classList.remove('hidden');
+            document.getElementById('adminPinInput').value = '';
+            filterAndRender(); // Re-render to hide delete icons
+        }
+
+        function copyVanshavaliText() {
+            const txt = document.getElementById('vanshavaliModalText').innerText;
+            navigator.clipboard.writeText(txt).then(() => {
+                showToast("वंशावली पाठ सफलतापूर्वक कॉपी भ' गेल!");
+            });
+        }
+
+        function openVanshavaliModal() {
+            document.getElementById('vanshavaliModal').classList.remove('hidden');
+        }
+
+        function closeVanshavaliModal() {
+            document.getElementById('vanshavaliModal').classList.add('hidden');
+        }
+
+        function copyFormattedWhatsAppList() {
+            let msg = "🙏 *जय माँ काली* 🙏\n\n*काली पूजा खौआरे परिवार (दुर्गौली) – २०२६*\n*सहयोग राशि सूची (कुल ७९ सदस्य)*\n\n";
+            const allMembers = [...contributors, ...customContributors];
+            allMembers.forEach((item, idx) => {
+                msg += `${idx + 1}. ${item.name}${item.purpose ? ' (' + item.purpose + ')' : ''} – ₹${item.amount.toLocaleString('en-IN')}\n`;
+            });
+            msg += "\n━━━━━━━━━━━━━━\n*कुल राशि: ₹ ३,०२,९७५/-*\n\nपूर्ण विवरण एवं वंशावली:\n" + window.location.href;
+
+            navigator.clipboard.writeText(msg).then(() => {
+                showToast("सभ ७९ सदस्यक WhatsApp सूची कॉपी भ' गेल!");
+            });
+        }
+
+        function copyToClipboard(id) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                showToast("UPI ID कॉपी भ' गेल!");
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
+        }
+
+        function shareOnWhatsApp() {
+            const text = encodeURIComponent(
+                "🙏 *जय माँ काली* 🙏\n\n" +
+                "*काली पूजा खौआरे परिवार (दुर्गौली) – २०२६*\n" +
+                "अधिकृत सहयोग राशि विवरणी:\n\n" +
+                "• कुल सहयोगकर्ता: ७९ परिवारजन\n" +
+                "• कुल संकलित राशि: ₹ ३,०२,९७५/-\n\n" +
+                "सभ ७९ सदस्यक सूची, वंशावली एवं फोटो गैलरी देखबाक लेल लिंक पर क्लिक करू:\n" +
+                window.location.href
+            );
+            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+        }
+
+        // Run On Load with Real-Time Firebase Listener
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                localStorage.removeItem('khaware_gallery_photos');
+                let stored = JSON.parse(localStorage.getItem('khaware_custom_photos') || '[]');
+                stored = stored.filter(p => !p.url.includes('ibb.co') && !p.url.includes('imgbb.com'));
+                localStorage.setItem('khaware_custom_photos', JSON.stringify(stored));
+                customPhotos = stored;
+
+                // Load custom contributions from localStorage if any
+                customContributors = JSON.parse(localStorage.getItem('khaware_custom_contribs') || '[]');
+            } catch(e) {}
+
+            // Real-Time Firebase Synchronization
+            if (db) {
+                // Real-time listener for deleted original records
+                db.collection("deleted_records").onSnapshot((snapshot) => {
+                    snapshot.forEach(doc => {
+                        const delData = doc.data();
+                        if (delData && delData.id && !deletedOriginalIds.includes(delData.id)) {
+                            deletedOriginalIds.push(delData.id);
+                        }
+                    });
+                    localStorage.setItem('khaware_deleted_ids', JSON.stringify(deletedOriginalIds));
+                    recalculateTotals();
+                    filterAndRender();
+                });
+
+                db.collection("gallery_photos").orderBy("createdAt", "desc").onSnapshot((snapshot) => {
+                    const fbList = [];
+                    snapshot.forEach(doc => {
+                        fbList.push(doc.data());
+                    });
+                    if (fbList.length > 0) {
+                        customPhotos = fbList;
+                        try {
+                            localStorage.setItem('khaware_custom_photos', JSON.stringify(customPhotos));
+                        } catch(e) {}
+                    }
+                    filterGallery('all');
+                }, (error) => {
+                    console.warn("Firestore snapshot error:", error);
+                });
+
+                // Real-time listener for public contribution entries
+                db.collection("contributions").orderBy("createdAt", "asc").onSnapshot((snapshot) => {
+                    const extraList = [];
+                    snapshot.forEach(doc => {
+                        extraList.push(doc.data());
+                    });
+                    if (extraList.length > 0) {
+                        customContributors = extraList;
+                    }
+                    recalculateTotals();
+                    filterAndRender();
+                });
+            }
+
+            recalculateTotals();
+            filterAndRender();
+            filterGallery('all');
+        });
+    </script>
+</body>
+</html>

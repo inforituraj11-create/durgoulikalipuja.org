@@ -827,6 +827,11 @@
         // Global error handler for broken gallery images
         window.handleImageError = function(imgEl) {
             if (!imgEl) return;
+            // If primary local path fails, try fallback cloud copy before hiding
+            if (imgEl.dataset.fallback && imgEl.src !== imgEl.dataset.fallback) {
+                imgEl.src = imgEl.dataset.fallback;
+                return;
+            }
             const card = imgEl.closest('.gallery-card');
             if (card) {
                 card.style.display = 'none';
@@ -918,11 +923,41 @@
 
         // 100% Genuine Kali Puja Images
         const authenticPhotos = [
-            { id: 101, year: "2026", title: "माँ श्यामा काली भव्य प्रतिमा दर्शन", url: "partima.jpeg" },
-            { id: 102, year: "2026", title: "निशा पूजा एवं पुरोहित वंदन", url: "WhatsApp%20Image%202026-11-09%20at%203.02.40%20AM.jpeg" },
-            { id: 103, year: "2026", title: "भगवान श्री गणेश, लक्ष्मी एवं सरस्वती", url: "WhatsApp%20Image%202026-11-09%20at%203.02.41%20AM.jpeg" },
-            { id: 104, year: "2026", title: "महापूजन एवं पारिवारिक अनुष्ठान मंडप", url: "WhatsApp%20Image%202026-11-09%20at%203.02.42%20AM.jpeg" },
-            { id: 105, year: "2026", title: "माँ काली संपूर्ण दरबार दर्शन", url: "WhatsApp%20Image%202026-11-09%20at%203.02.43%20AM.jpeg" }
+            { 
+                id: 101, 
+                year: "2026", 
+                title: "माँ श्यामा काली भव्य प्रतिमा दर्शन", 
+                url: "./partima.jpeg",
+                fallback: "https://i.ibb.co/vzG7Z1z/partima.jpg"
+            },
+            { 
+                id: 102, 
+                year: "2026", 
+                title: "निशा पूजा एवं पुरोहित वंदन", 
+                url: "./WhatsApp Image 2026-11-09 at 3.02.40 AM.jpeg",
+                fallback: "https://i.ibb.co/3WqjX1N/WhatsApp-Image-2026-11-09-at-3-02-40-AM.jpg"
+            },
+            { 
+                id: 103, 
+                year: "2026", 
+                title: "भगवान श्री गणेश, लक्ष्मी एवं सरस्वती", 
+                url: "./WhatsApp Image 2026-11-09 at 3.02.41 AM.jpeg",
+                fallback: "https://i.ibb.co/zX5g94D/WhatsApp-Image-2026-11-09-at-3-02-41-AM.jpg"
+            },
+            { 
+                id: 104, 
+                year: "2026", 
+                title: "महापूजन एवं पारिवारिक अनुष्ठान मंडप", 
+                url: "./WhatsApp Image 2026-11-09 at 3.02.42 AM.jpeg",
+                fallback: "https://i.ibb.co/v32kK1h/WhatsApp-Image-2026-11-09-at-3-02-42-AM.jpg"
+            },
+            { 
+                id: 105, 
+                year: "2026", 
+                title: "माँ काली संपूर्ण दरबार दर्शन", 
+                url: "./WhatsApp Image 2026-11-09 at 3.02.43 AM.jpeg",
+                fallback: "https://i.ibb.co/7bJc5Jt/WhatsApp-Image-2026-11-09-at-3-02-43-AM.jpg"
+            }
         ];
 
         let customPhotos = [];
@@ -1179,8 +1214,10 @@
                 
                 div.onclick = () => openLightbox(photo.url, photo.title, photo.year);
                 
+                const fallbackAttr = photo.fallback ? `data-fallback="${photo.fallback}"` : '';
+
                 div.innerHTML = `
-                    <img src="${photo.url}" alt="${photo.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="handleImageError(this)">
+                    <img src="${photo.url}" alt="${photo.title}" ${fallbackAttr} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="handleImageError(this)">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-end text-white">
                         <span class="text-[10px] bg-amber-500 text-stone-950 font-bold px-1.5 py-0.5 rounded self-start mb-1">${photo.year}</span>
                         <p class="text-xs font-semibold text-amber-200">${photo.title}</p>
